@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="footer__brand">
           <div className="footer__identity">
             <span className="footer__logo-mark" aria-hidden="true" />
-            <span className="footer__logo-text">IS-302</span>
+            <span className="footer__logo-text">IS-310</span>
           </div>
           <p className="footer__sub">Praksisprosjekt ved Universitetet i Agder</p>
         </div>
@@ -20,7 +20,7 @@ export default function Footer() {
       </div>
 
       <div className="container footer__bottom">
-        <p className="mono">© {new Date().getFullYear()} IS-302 Gruppe ved UiA</p>
+        <p className="mono">© {new Date().getFullYear()} IS-310 Gruppe ved UiA</p>
         <p className="mono footer__built">Bygget med React + Vite</p>
       </div>
     </footer>

@@ -37,14 +37,13 @@ export default function Home() {
         <section className="hero" ref={heroRef}>
           <div className="container hero__inner">
             <div className="hero__content">
-              <p className="hero__tag mono" ref={tagRef}>IS-302 Praksisemnet 2026</p>
+              <p className="hero__tag mono" ref={tagRef}>IS-310 Bachelor 2027</p>
               <h1 className="hero__title" ref={titleRef}>
                 Vi lærer ved<br />
                 <span className="accent">å gjøre</span>
               </h1>
               <p className="hero__sub" ref={subRef}>
-                En gruppe IT-studenter ved UiA som dokumenterer veien gjennom
-                praksisemnet, fra oppstart til refleksjon.
+                En gruppe engarsjert gruppe IT-studenter ved UiA som er klare for et spennde bacherlorprosjekt.
               </p>
               <div className="hero__cta" ref={ctaRef}>
                 <Link to="/om-oss" className="btn btn--primary">Introduksjons-video</Link>
@@ -56,11 +55,11 @@ export default function Home() {
               <div className="hero__photo-frame">
                 <img
                     src={groupPhoto}
-                    alt="IS-302 praksisgruppen foran et luftambulanse-helikopter"
+                    alt="Bachelor gruppen foran et luftambulanse-helikopter"
                     className="hero__photo-img"
                 />
               </div>
-              <p className="hero__photo-caption mono">IS-302 praksisgruppen</p>
+              <p className="hero__photo-caption mono">IS-310 bachelorgruppen</p>
             </div>
           </div>
           <div className="hero__line" aria-hidden="true" />
@@ -69,9 +68,9 @@ export default function Home() {
         <section className="home-about">
           <div className="container" ref={aboutRef}>
             <p className="section-tag mono">Om prosjektet</p>
-            <h2 className="section-title">Hva er IS-302?</h2>
+            <h2 className="section-title">Hva er IS-310?</h2>
             <p className="section-body">
-              IS-302 er et praksisemne ved Universitetet i Agder der vi som gruppe
+              IS-310 er et praksisemne ved Universitetet i Agder der vi som gruppe
               arbeider ute i en bedrift over et semester. Denne siden dokumenterer
               oppgaven vår, hvem vi er, og hva vi lærer underveis.
             </p>

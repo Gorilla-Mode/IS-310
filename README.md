@@ -1,9 +1,9 @@
 **Status**: Active Development | **Last Updated**: April 2026
 
-# IS-302 — Praksisdokumentasjon
+# IS-310 - Prosjektgjennomføring
 
-Nettside for dokumentasjon av praksisemnet IS-302 ved Universitetet i Agder.
-Gruppen presenterer seg selv, oppgaven, fremdrift og refleksjoner gjennom en interaktiv SPA.
+Nettside for emnet IS-310 ved Universitetet i Agder.
+Gruppen presenterer seg selv.
 
 ## 1. Demo
 
@@ -43,12 +43,7 @@ https://github.com/user-attachments/assets/0fac8732-d98b-4527-8358-e825c3c265c4
 |---------------|-------------------|----------------------------------------------|
 | `/`           | `Home.jsx`        | Hero-seksjon med intro og call-to-action      |
 | `/om-oss`     | `OmOss.jsx`       | Introduksjonsvideo og tidligere prosjekter    |
-| `/oppgave`    | `Oppgave.jsx`     | Beskrivelse av praksisoppgaven                |
 | `/team`       | `Team.jsx`        | Oversikt over gruppemedlemmer                 |
-| `/status-1`   | `Status1.jsx`     | Redigerbar statusrapport 1 (localStorage)     |
-| `/status-2`   | `Status2.jsx`     | Redigerbar statusrapport 2 (localStorage)     |
-| `/dagbok`     | `Dagbok.jsx`      | Ukelogg med add/edit/delete (localStorage)    |
-| `/refleksjon` | `Refleksjon.jsx`  | Redigerbare refleksjonsnotater (localStorage) |
 
 ---
 
@@ -65,12 +60,7 @@ src/
 ├── pages/
 │   ├── Home.jsx            # Landingsside med GSAP-animert hero
 │   ├── OmOss.jsx           # Om oss — video + prosjektkort
-│   ├── Oppgave.jsx         # Praksisoppgave
-│   ├── Team.jsx            # 5-kolonne grid med teamkort
-│   ├── Dagbok.jsx          # Fullstendig CRUD-dagbok med localStorage
-│   ├── Status1.jsx         # Bruker EditablePage, key: status1Entries
-│   ├── Status2.jsx         # Bruker EditablePage, key: status2Entries
-│   └── Refleksjon.jsx      # Bruker EditablePage, key: reflectionEntries
+│   └── Team.jsx            # 5-kolonne grid med teamkort
 │
 ├── data/
 │   ├── teamMembers.js      # Array med info om alle 5 gruppemedlemmer
@@ -151,4 +141,4 @@ npm run build
 
 ---
 
-*Universitetet i Agder — IS-302 Praksis, 2026*
+*Universitetet i Agder — IS-310, 2026*

@@ -1,4 +1,4 @@
-**Status**: Active Development | **Last Updated**: April 2026
+**Status**: Active Development | **Last Updated**: August 2026
 
 # IS-310 - Prosjektgjennomføring
 
@@ -30,13 +30,6 @@ https://github.com/user-attachments/assets/0fac8732-d98b-4527-8358-e825c3c265c4
 | GSAP 3           | ^3.x     | Scroll-trigget animasjoner og side-transitions     |
 | TypeScript       | —        | Ikke i bruk, prosjektet bruker JSX                 |
 
-### Datalagring
-| Komponent      | Usage                                                    |
-|----------------|----------------------------------------------------------|
-| localStorage   | CRUD-lagring for Dagbok, Status 1/2 og Refleksjon        |
-
----
-
 ## 3. Sidestruktur
 
 | Rute          | Komponent         | Innhold                                      |
@@ -54,8 +47,7 @@ src/
 ├── components/
 │   ├── Navbar.jsx          # Fast navigasjonsbar med glass-blur og mobil-drawer
 │   ├── Footer.jsx          # Footer med nav-lenker og brand
-│   ├── TeamCard.jsx        # Kort for hvert gruppemedlem
-│   └── EditablePage.jsx    # Gjenbrukbar CRUD-komponent (Status, Refleksjon)
+│   └── TeamCard.jsx        # Kort for hvert gruppemedlem
 │
 ├── pages/
 │   ├── Home.jsx            # Landingsside med GSAP-animert hero
@@ -65,8 +57,7 @@ src/
 ├── data/
 │   ├── teamMembers.js      # Array med info om alle 5 gruppemedlemmer
 │   ├── projects.js         # Array med tidligere prosjekter (Om oss-siden)
-│   ├── navLinks.js         # Navigasjonslenker brukt i Navbar
-│   └── diaryEntries.js     # Standard-oppføringer for Dagbok
+│   └── navLinks.js         # Navigasjonslenker brukt i Navbar
 │
 ├── hooks/
 │   └── useReveal.js        # GSAP scroll-trigger hook for entrance-animasjoner
@@ -74,27 +65,26 @@ src/
 └── index.css               # Design tokens, reset og globale utilities
 ```
 
-**Dataflyt (CRUD-sider):**
-1. Bruker åpner Status/Dagbok/Refleksjon
-2. `EditablePage` / `Dagbok` leser fra `localStorage` ved oppstart
-3. Add/edit/delete oppdaterer React-state
-4. `useEffect` synkroniserer state til `localStorage` automatisk
-5. "Lagret"-flash bekrefter vellykket lagring
+**Dataflyt (statisk nettside):**
+1. Bruker navigerer mellom de aktive sidene i appen
+2. React Router rendrer tilsvarende komponenter
+3. Innholdet hentes fra statiske datafiler eller JSX-komponenter
+4. UI-komponenter renderes uten server-side lagring
 
 ---
 
 ## 5. Designsystem
 
-| Token          | Verdi       | Bruk                              |
-|----------------|-------------|-----------------------------------|
-| `--ink`        | `#0a0a0a`   | Sidebakgrunn                      |
-| `--ash`        | `#1c1c1e`   | Kortbakgrunn                      |
-| `--accent`     | `#e8ff47`   | Lime-aksent — knapper, aktive lenker |
-| `--snow`       | `#f5f5f7`   | Overskrifter                      |
-| `--silver`     | `#8e8e93`   | Sekundærtekst                     |
-| `--font-heading` | Syne      | Alle overskrifter                 |
-| `--font-body`  | DM Sans     | Brødtekst og UI                   |
-| `--font-mono`  | JetBrains Mono | Tags, labels, kode              |
+| Token            | Verdi          | Bruk                                 |
+|------------------|----------------|--------------------------------------|
+| `--ink`          | `#0a0a0a`      | Sidebakgrunn                         |
+| `--ash`          | `#1c1c1e`      | Kortbakgrunn                         |
+| `--accent`       | `#e8ff47`      | Lime-aksent — knapper, aktive lenker |
+| `--snow`         | `#f5f5f7`      | Overskrifter                         |
+| `--silver`       | `#8e8e93`      | Sekundærtekst                        |
+| `--font-heading` | Syne           | Alle overskrifter                    |
+| `--font-body`    | DM Sans        | Brødtekst og UI                      |
+| `--font-mono`    | JetBrains Mono | Tags, labels, kode                   |
 
 ---
 

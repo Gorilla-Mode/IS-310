@@ -20,8 +20,7 @@ export default function OmOss() {
 
         <div className="page__body" ref={bodyRef}>
           <p>
-            Vi er en gruppe med fem IT-studenter ved Universitetet i Agder som tar
-            praksisemnet IS-310. Her presenterer vi gruppen gjennom en kort introduksjonsvideo.
+            Vi er en gruppe med fem engasjerte IT-studenter ved Universitetet i Agder. Her presenterer vi gruppen gjennom en kort introduksjonsvideo.
             Mer informasjon om hvert gruppemedlem finner du på Team-siden.
           </p>
         </div>

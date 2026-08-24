@@ -1,4 +1,4 @@
-﻿.bio-category-wrapper {
+.bio-category-wrapper {
   display: flex;
   flex-direction: column;
 }
@@ -10,7 +10,7 @@
 
 .bio-category-wrapper__divider {
   border: none;
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-top: 1px solid rgb(from var(--snow) r g b / 0.15);
   margin: 2rem 0 0 0;
   padding: 0;
   margin-bottom: -2rem;

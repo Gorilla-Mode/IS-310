@@ -2,12 +2,13 @@
   padding-top: calc(var(--nav-h) + 50px);
   padding-bottom: 120px;
   min-height: 100svh;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Ccircle cx='20' cy='20' r='1' fill='rgba(255,255,255,0.045)'/%3E%3C/svg%3E");
+  background-image: radial-gradient(circle at center, rgb(from var(--dark) r g b / .075) 1px, transparent 2px);
   background-size: 40px 40px;
 }
 
 .page__header {
   margin-bottom: 48px;
+  margin-top: -24px;
 }
 
 .page__tag {

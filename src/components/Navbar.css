@@ -5,18 +5,18 @@
   right: 0;
   z-index: 100;
   height: var(--nav-h);
-  background: rgba(5, 5, 5, 0.75);
-  backdrop-filter: blur(16px) saturate(160%);
-  -webkit-backdrop-filter: blur(16px) saturate(160%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 1px 24px rgba(0, 0, 0, 0.35);
+  background: rgb(from var(--void) r g b / 0.75);
+  backdrop-filter: blur(4px) saturate(160%);
+  -webkit-backdrop-filter: blur(4px) saturate(160%);
+  border-bottom: 1px solid rgb(from var(--snow) r g b / 0.08);
+  box-shadow: 0 1px 24px rgb(from var(--ink) r g b / 0.35);
   transition: background 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
 }
 
 .navbar--scrolled {
-  background: rgba(5, 5, 5, 0.92);
-  border-bottom-color: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 1px 32px rgba(0, 0, 0, 0.55);
+  background: rgb(from var(--void) r g b / 0.92);
+  border-bottom-color: rgb(from var(--snow) r g b / 0.1);
+  box-shadow: 0 1px 32px rgb(from var(--ink) r g b / 0.55);
 }
 
 .navbar__inner {
@@ -44,13 +44,13 @@
   border-radius: 3px;
   transform: rotate(45deg);
   flex-shrink: 0;
-  box-shadow: 0 0 10px rgba(232, 255, 71, 0.35);
+  box-shadow: 0 0 10px rgb(from var(--signal) r g b / 0.35);
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .navbar__logo:hover .navbar__logo-mark {
   border-color: var(--glow);
-  box-shadow: 0 0 16px rgba(184, 255, 0, 0.5);
+  box-shadow: 0 0 16px rgb(from var(--signal-strong) r g b / 0.5);
 }
 
 .navbar__logo-text {
@@ -82,7 +82,7 @@
 
 .navbar__link:hover {
   color: var(--snow);
-  background: rgba(255, 255, 255, 0.05);
+  background: rgb(from var(--snow) r g b / 0.05);
 }
 
 .navbar__link--active {
@@ -99,7 +99,7 @@
   height: 2px;
   background: var(--accent);
   border-radius: 2px;
-  box-shadow: 0 0 6px rgba(232, 255, 71, 0.5);
+  box-shadow: 0 0 6px rgb(from var(--signal) r g b / 0.5);
 }
 
 /* Burger */
@@ -144,7 +144,7 @@
   bottom: 0;
   width: min(320px, 85vw);
   background: var(--stone);
-  border-left: 1px solid rgba(255, 255, 255, 0.06);
+  border-left: 1px solid rgb(from var(--snow) r g b / 0.06);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -160,7 +160,7 @@
   font-weight: 700;
   color: var(--light);
   padding: 10px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgb(from var(--snow) r g b / 0.06);
   transition: color 0.2s;
   text-decoration: none;
 }
@@ -173,7 +173,7 @@
 .nav-mobile__backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgb(from var(--ink) r g b / 0.6);
   z-index: 199;
   cursor: pointer;
 }

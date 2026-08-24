@@ -10,7 +10,7 @@ export default function Footer() {
             <span className="footer__logo-mark" aria-hidden="true" />
             <span className="footer__logo-text">IS-310</span>
           </div>
-          <p className="footer__sub">Praksisprosjekt ved Universitetet i Agder</p>
+          <p className="footer__sub">Bachelor ved Universitetet i Agder</p>
         </div>
 
         <nav className="footer__nav" aria-label="Fotnav">

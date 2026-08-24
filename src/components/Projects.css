@@ -1,11 +1,11 @@
-﻿/* ── Projects section ────────────────────────────────────────────── */
+/* ── Projects section ────────────────────────────────────────────── */
 .projects-section {
   margin-top: 0;
 }
 
 .projects-divider {
   border: none;
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-top: 1px solid rgb(from var(--snow) r g b / 0.15);
   padding-bottom: 2rem;
 }
 
@@ -29,7 +29,7 @@
 
 .project-card {
   background: var(--ash);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid rgb(from var(--snow) r g b / 0.06);
   border-radius: 16px;
   padding: 21px;
   display: flex;
@@ -56,8 +56,8 @@
 
 .project-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(232, 255, 71, 0.2);
-  box-shadow: 0 8px 36px rgba(0, 0, 0, 0.45);
+  border-color: rgb(from var(--signal) r g b / 0.2);
+  box-shadow: 0 8px 36px rgb(from var(--ink) r g b / 0.45);
 }
 
 .project-card:hover::before {
@@ -91,8 +91,8 @@
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgb(from var(--snow) r g b / 0.05);
+  border: 1px solid rgb(from var(--snow) r g b / 0.1);
   border-radius: 6px;
   padding: 4px 10px;
   font-size: 0.75rem;
@@ -101,8 +101,8 @@
 }
 
 .tech-tag:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.2);
+  background: rgb(from var(--snow) r g b / 0.1);
+  border-color: rgb(from var(--snow) r g b / 0.2);
 }
 
 .tech-tag__icon {
@@ -133,7 +133,7 @@
 
 .project-card__footer {
   padding-top: 16px;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid rgb(from var(--snow) r g b / 0.06);
 }
 
 .project-card__cta {

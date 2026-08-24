@@ -8,9 +8,13 @@
   --silver: #8e8e93;
   --light:  #ebebf0;
   --snow:   #f5f5f7;
-  --accent: #e8ff47;
-  --glow:   #b8ff00;
+  --accent: #c6102e;
+  --glow:   #c6102e;
   --warm:   #ff6b35;
+  --void:   #050505;
+  --signal: #c6102e;
+  --signal-strong: #c6102e;
+  --linkedin: #0a66c2;
 
   --font-heading: 'Syne', system-ui, sans-serif;
   --font-display: 'Space Grotesk', system-ui, sans-serif;

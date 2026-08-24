@@ -39,22 +39,21 @@ export default function BioOda() {
                                 image={`${import.meta.env.BASE_URL}images/oda/IMG_0082.jpg`}
                             >
                                 <p>
-                                    Jeg er på utveksling i Sør-Korea i mitt fjerde semester, hvor jeg får oppleve både et nytt skolesystem og en annerledes kultur.
-                                    Oppholdet har gitt meg muligheten til å smake ny mat, reise rundt i landet og utfordre meg selv i nye omgivelser.
-                                    Å reise alene har gjort meg mer selvstendig og trygg på egne valg.
+                                    Jeg har vært på utveksling i Sør-Korea i mitt fjerde semester, hvor jeg fikk oppleve et nytt skolesystem og en annerledes kultur. 
+                                    Oppholdet ga meg muligheten til å bli kjent med nye mennesker, prøve ny mat og reise rundt i landet. Jeg reiste også alene til Vietnam,
+                                    noe som utfordret meg og gjorde meg mer selvstendig og tryggere på egne valg.
                                 </p>
 
                                 <p>
-                                    Jeg er en aktiv person med interesse for trening, særlig styrketrening og løping.
-                                    Jeg motiveres av å sette meg mål og jobbe målrettet mot dem.
-                                    I tillegg liker jeg å spille golf med venner og familie.
-                                    Jeg er også glad i å lage og prøve ny mat.
+                                    Jeg er en aktiv person som liker å sette meg mål og jobbe målrettet for å nå dem. 
+                                    Jeg trener spesielt styrketrening og løping, og på fritiden liker jeg å spille golf med venner og familie. 
+                                    Jeg er også glad i å lage mat og prøve nye oppskrifter.
                                 </p>
 
                                 <p>
-                                    Samtidig er jeg opptatt av å ta vare på menneskene rundt meg – venner og familie er en viktig del av livet mitt.
-                                    Jeg er eventyrlysten og trives med å utforske nye steder.
-                                    Utvekslingsoppholdet i Sør-Korea har derfor vært både lærerikt og utviklende.
+                                    Jeg setter stor pris på menneskene rundt meg, og venner og familie er en viktig del av livet mitt. 
+                                    Samtidig er jeg eventyrlysten og liker å utforske nye steder og oppleve nye ting. 
+                                    Utvekslingsoppholdet i Sør-Korea ble derfor en lærerik og utviklende erfaring som utfordret meg både personlig og faglig.
                                 </p>
                             </BioImageSection>
 

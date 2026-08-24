@@ -1,4 +1,4 @@
-/* ── Projects section ────────────────────────────────────────────── */
+﻿/* ── Projects section ────────────────────────────────────────────── */
 .projects-section {
   margin-top: 0;
 }
@@ -91,8 +91,8 @@
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  background: rgb(from var(--snow) r g b / 0.05);
-  border: 1px solid rgb(from var(--snow) r g b / 0.1);
+  background: rgb(from var(--silver) r g b / 0.05);
+  border: 1px solid rgb(from var(--silver) r g b / 0.1);
   border-radius: 6px;
   padding: 4px 10px;
   font-size: 0.75rem;
@@ -101,8 +101,8 @@
 }
 
 .tech-tag:hover {
-  background: rgb(from var(--snow) r g b / 0.1);
-  border-color: rgb(from var(--snow) r g b / 0.2);
+  background: rgb(from var(--dark) r g b / 0.1);
+  border-color: rgb(from var(--accent) r g b / 0.2);
 }
 
 .tech-tag__icon {

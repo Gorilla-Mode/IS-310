@@ -1,6 +1,7 @@
 /* ─── Design tokens ──────────────────────────────────────────────── */
 :root {
   --ink: #F8EDDD;
+  --ink-dark: #efe4d4;
   --stone: #f0eee9;
   --ash: #FEE7E8;
   --fog: #ddd3c9;

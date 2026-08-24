@@ -110,7 +110,7 @@ export default function BioTobias() {
                 ></iframe>
                 <iframe
                     style={{borderRadius: '12px'}}
-                    src="https://open.spotify.com/embed/track/1fXvxcQdz9OEe5IeNHQh72?utm_source=generator&theme=0"
+                    src="https://open.spotify.com/embed/track/1fXvxcQdz9OEe5IeNHQh72?utm_source=generator"
                     width="100%"
                     height="80"
                     frameBorder="0"
@@ -119,7 +119,7 @@ export default function BioTobias() {
                 ></iframe>
                 <iframe
                     style={{borderRadius: '12px'}}
-                    src="https://open.spotify.com/embed/track/5ArNGisLzrNOIVwWajRRdt?utm_source=generator&theme=0"
+                    src="https://open.spotify.com/embed/track/5ArNGisLzrNOIVwWajRRdt?utm_source=generator"
                     width="100%"
                     height="80"
                     frameBorder="0"
@@ -128,7 +128,7 @@ export default function BioTobias() {
                 ></iframe>
                 <iframe
                     style={{borderRadius: '12px'}}
-                    src="https://open.spotify.com/embed/track/7hdOchAKFm6FwzyevcQ56y?utm_source=generator&theme=0"
+                    src="https://open.spotify.com/embed/track/7hdOchAKFm6FwzyevcQ56y?utm_source=generator"
                     width="100%"
                     height="80"
                     frameBorder="0"
@@ -137,7 +137,7 @@ export default function BioTobias() {
                 ></iframe>
                 <iframe
                     style={{borderRadius: '12px'}}
-                    src="https://open.spotify.com/embed/track/3OHevW2cUT176DXWV0lHg9?utm_source=generator&theme=0"
+                    src="https://open.spotify.com/embed/track/3OHevW2cUT176DXWV0lHg9?utm_source=generator"
                     width="100%"
                     height="80"
                     frameBorder="0"

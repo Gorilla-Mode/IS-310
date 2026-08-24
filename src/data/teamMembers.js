@@ -47,7 +47,7 @@ export const teamMembers = [
     name: 'Oda Elise Aanestad',
     subtitle: 'IT og informasjonssystemer, UiA / 5. semester\nUtveksling ved Chung-Ang University i Seoul',
     age: '21 år, fra Varhaug',
-    bio: 'Jeg er interessert i hvordan teknologi implementeres i hverdagen, særlig samspillet mellom mennesker og teknologi. Jeg er strukturert og motivert for å lære nye ting, og synes utviklingen innen AI er spesielt spennende.',
+    bio: 'Jeg synes det er veldig spennende å se hvordan teknologi blir en større del av hverdagen vår, og spesielt hvordan mennesker og teknologi fungerer sammen. Jeg er ganske strukturert og liker å lære nye ting og utfordre meg selv. Jeg synes også AI er veldig spennende, og liker å følge med på hvordan teknologien utvikler seg og kan brukes i praksis1',
     hobbies: ['Trene','Golf','Lage mat'],
     image: `${import.meta.env.BASE_URL}images/oda-linkedin.jpg`,
     linkedin: 'https://www.linkedin.com/in/oda-elise-aanestad-857206351/',

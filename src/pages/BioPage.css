@@ -38,9 +38,9 @@
 }
 
 .bio-section p {
-  font-size: 1.05rem;
+  font-size: 1rem;
   color: var(--silver);
-  line-height: 1.75;
+  line-height: 1.30;
   margin: 0;
 }
 

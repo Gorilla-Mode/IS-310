@@ -8,6 +8,7 @@
 
 .page__header {
   margin-bottom: 48px;
+  margin-top: -24px;
 }
 
 .page__tag {

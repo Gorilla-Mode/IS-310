@@ -16,9 +16,9 @@
   --signal-strong: #c6102e;
   --linkedin: #0a66c2;
 
-  --font-heading: 'Syne', system-ui, sans-serif;
-  --font-display: 'Space Grotesk', system-ui, sans-serif;
-  --font-body:    'DM Sans', system-ui, sans-serif;
+  --font-heading: 'acumin-pro', sans-serif;
+  --font-display: 'acumin-pro', sans-serif;
+  --font-body:    'JetBrains Mono', ui-monospace, monospace;
   --font-mono:    'JetBrains Mono', ui-monospace, monospace;
 
   --nav-h: 72px;

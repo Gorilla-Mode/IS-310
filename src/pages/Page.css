@@ -2,7 +2,7 @@
   padding-top: calc(var(--nav-h) + 50px);
   padding-bottom: 120px;
   min-height: 100svh;
-  background-image: radial-gradient(circle at center, rgb(from var(--snow) r g b / 0.045) 1px, transparent 1px);
+  background-image: radial-gradient(circle at center, rgb(from var(--dark) r g b / .075) 1px, transparent 2px);
   background-size: 40px 40px;
 }
 

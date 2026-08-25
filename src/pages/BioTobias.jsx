@@ -29,6 +29,20 @@ export default function BioTobias() {
       github: 'https://github.com/Gorilla-Mode/OSMparser',
       tech: ['go', 'postgis'],
     },
+    {
+      id: 3,
+      title: 'SWRPG Inventory System',
+      description: 'Inventory system for Star Wars RPG, bruker en grid og slot basert inventory inspirert av DayZ og EFT',
+      github: 'https://github.com/Gorilla-Mode/SWRPG-Inventory-System',
+      tech: ['odin', 'raylib'],
+    },
+    {
+      id: 4,
+      title: 'GhosttyStatus',
+      description: 'Enkelt verktøy for å kunne vise en status bar i Ghostty lignende den en har i tmux',
+      github: 'https://github.com/Gorilla-Mode/GhosttyStatus',
+      tech: ['c'],
+    },
   ]
 
   const tobiasImages = [
@@ -40,8 +54,6 @@ export default function BioTobias() {
     `${import.meta.env.BASE_URL}images/tobias/C004321-R1-32-33.JPG`,
     `${import.meta.env.BASE_URL}images/tobias/C004321-R1-25-26.JPG`,
     `${import.meta.env.BASE_URL}images/tobias/C004061-R1-32-33.JPG`,
-
-
   ]
 
   if (!member) {
@@ -81,6 +93,9 @@ export default function BioTobias() {
                     Nikon F3 fordi jeg syntes det er lite som kan måle seg med tonene en får fra film. Men jeg tar også
                     mye
                     bilder på digtal.</p>
+                  <p>I løpet av sommeren har jeg fisket mye, og satt ny aure rekord på 1220g. Jeg har også startet ett lite prosjekt
+                    med å fange alle ferskvannsartene i Norge på stang (med unntak av karpefisk), til nå har jeg fanget aure, tryte, gjedde og røye. Røya 
+                  var på isfiske, så den må tas på nytt.</p>
                 </BioTextSection>
                 <br/>
                 <BioImageSection title="Foto galleri">
@@ -101,7 +116,7 @@ export default function BioTobias() {
 
                 <iframe
                     style={{borderRadius: '12px'}}
-                    src="https://open.spotify.com/embed/track/0zu11sCBaCOQT7QWfqGFbD?utm_source=generator&theme=0"
+                    src="https://open.spotify.com/embed/track/0zu11sCBaCOQT7QWfqGFbD?utm_source=generator&theme=1"
                     width="100%"
                     height="80"
                     frameBorder="0"
@@ -110,7 +125,7 @@ export default function BioTobias() {
                 ></iframe>
                 <iframe
                     style={{borderRadius: '12px'}}
-                    src="https://open.spotify.com/embed/track/1fXvxcQdz9OEe5IeNHQh72?utm_source=generator"
+                    src="https://open.spotify.com/embed/track/1ICBjx8MKVqZdXCnpUVfAB?utm_source=generator&theme=1"
                     width="100%"
                     height="80"
                     frameBorder="0"
@@ -119,7 +134,7 @@ export default function BioTobias() {
                 ></iframe>
                 <iframe
                     style={{borderRadius: '12px'}}
-                    src="https://open.spotify.com/embed/track/5ArNGisLzrNOIVwWajRRdt?utm_source=generator"
+                    src="https://open.spotify.com/embed/track/5aozioXEMgxyttOvxCsckp?utm_source=generator&theme=0"
                     width="100%"
                     height="80"
                     frameBorder="0"
@@ -128,7 +143,7 @@ export default function BioTobias() {
                 ></iframe>
                 <iframe
                     style={{borderRadius: '12px'}}
-                    src="https://open.spotify.com/embed/track/7hdOchAKFm6FwzyevcQ56y?utm_source=generator"
+                    src="https://open.spotify.com/embed/track/7hdOchAKFm6FwzyevcQ56y?utm_source=generator&theme=1"
                     width="100%"
                     height="80"
                     frameBorder="0"
@@ -137,7 +152,7 @@ export default function BioTobias() {
                 ></iframe>
                 <iframe
                     style={{borderRadius: '12px'}}
-                    src="https://open.spotify.com/embed/track/3OHevW2cUT176DXWV0lHg9?utm_source=generator"
+                    src="https://open.spotify.com/embed/track/3cMuGOGSaTWbwOurTS4b3Y?si=d4b2586de59b404c&utm_source=generator&theme=1"
                     width="100%"
                     height="80"
                     frameBorder="0"

@@ -163,6 +163,19 @@ const techIcons = {
       <text x="12" y="15" textAnchor="middle" fill="#00FF00" fontSize="8" fontFamily="monospace" fontWeight="bold">N</text>
     </svg>
   ),
+  odin: (
+    <svg viewBox="0 0 24 24" className="tech-icon-svg">
+      <circle cx="12" cy="12" r="10" fill="#3882D6" />
+      <circle cx="12" cy="12" r="6" fill="white" />
+      <rect x="10.15" y="1.8" width="3.7" height="20.4" fill="#3882D6" transform="rotate(33 12 12)" />
+    </svg>
+  ),
+  raylib: (
+    <svg viewBox="0 0 24 24" className="tech-icon-svg">
+      <rect x="2" y="2" width="20" height="20" fill="white" stroke="black" strokeWidth="2" />
+      <text x="12" y="16.5" textAnchor="middle" fill="black" fontSize="8.7" fontWeight="bold">RL</text>
+    </svg>
+  ),
 }
 
 function TechTag({ tech }) {
@@ -215,4 +228,3 @@ export default function Projects({ projects, title = 'Prosjekter', subtitle, del
     </section>
   )
 }
-

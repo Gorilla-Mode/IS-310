@@ -1,20 +1,26 @@
 /* ─── Design tokens ──────────────────────────────────────────────── */
 :root {
-  --ink:    #0a0a0a;
-  --stone:  #111111;
-  --ash:    #1c1c1e;
-  --fog:    #2a2a2c;
-  --mist:   #3a3a3c;
-  --silver: #8e8e93;
-  --light:  #ebebf0;
-  --snow:   #f5f5f7;
-  --accent: #e8ff47;
-  --glow:   #b8ff00;
-  --warm:   #ff6b35;
+  --ink: #F8EDDD;
+  --ink-dark: #efe4d4;
+  --stone: #f0eee9;
+  --ash: #FEE7E8;
+  --fog: #ddd3c9;
+  --mist: #b9b0a8;
+  --silver: #5d6067;
+  --light: #1b1c1f;
+  --snow: #121417;
+  --accent: #c6102e;
+  --glow: #b20f2d;
+  --warm: #ff6b35;
+  --void: #FEE7E8;
+  --signal: #d91231;
+  --signal-strong: #c6102e;
+  --linkedin: #0a66c2;
+  --dark: #131E29;
 
-  --font-heading: 'Syne', system-ui, sans-serif;
-  --font-display: 'Space Grotesk', system-ui, sans-serif;
-  --font-body:    'DM Sans', system-ui, sans-serif;
+  --font-heading: 'acumin-pro', sans-serif;
+  --font-display: 'acumin-pro', sans-serif;
+  --font-body:    'JetBrains Mono', ui-monospace, monospace;
   --font-mono:    'JetBrains Mono', ui-monospace, monospace;
 
   --nav-h: 72px;

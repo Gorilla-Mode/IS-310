@@ -1,4 +1,4 @@
-﻿/* ── Image Carousel ──────────────────────────────────────────────── */
+/* ── Image Carousel ──────────────────────────────────────────────── */
 .image-carousel {
   display: flex;
   flex-direction: column;
@@ -14,8 +14,8 @@
   position: relative;
   border-radius: 12px;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgb(from var(--snow) r g b / 0.07);
+  box-shadow: 0 4px 12px rgb(from var(--ink) r g b / 0.2);
   aspect-ratio: 16/9;
   background: var(--ash);
 }
@@ -37,8 +37,8 @@
   position: absolute;
   top: 12px;
   right: 12px;
-  background: rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgb(from var(--ink) r g b / 0.6);
+  border: 1px solid rgb(from var(--snow) r g b / 0.3);
   color: white;
   width: 40px;
   height: 40px;
@@ -59,8 +59,8 @@
 }
 
 .image-carousel__expand-btn:hover {
-  background: rgba(0, 0, 0, 0.8);
-  border-color: rgba(255, 255, 255, 0.6);
+  background: rgb(from var(--ink) r g b / 0.8);
+  border-color: rgb(from var(--snow) r g b / 0.6);
 }
 
 /* ── Navigation Buttons ──────────────────────────────────────────── */
@@ -68,8 +68,8 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgb(from var(--ink) r g b / 0.6);
+  border: 1px solid rgb(from var(--snow) r g b / 0.3);
   color: white;
   width: 48px;
   height: 48px;
@@ -84,8 +84,8 @@
 }
 
 .image-carousel__nav-btn:hover {
-  background: rgba(0, 0, 0, 0.8);
-  border-color: rgba(255, 255, 255, 0.6);
+  background: rgb(from var(--ink) r g b / 0.8);
+  border-color: rgb(from var(--snow) r g b / 0.6);
 }
 
 .image-carousel__nav-btn--prev {
@@ -143,7 +143,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.95);
+  background: rgb(from var(--ink) r g b / 0.95);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -175,8 +175,8 @@
   position: absolute;
   top: 7.5dvh;
   right: 16dvw;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgb(from var(--snow) r g b / 0.1);
+  border: 1px solid rgb(from var(--snow) r g b / 0.3);
   color: white;
   width: 48px;
   height: 48px;
@@ -191,15 +191,15 @@
 }
 
 .image-carousel__close-btn:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgb(from var(--snow) r g b / 0.2);
 }
 
 .image-carousel__modal-nav {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgb(from var(--ink) r g b / 0.6);
+  border: 1px solid rgb(from var(--snow) r g b / 0.3);
   color: white;
   width: 56px;
   height: 56px;
@@ -214,7 +214,7 @@
 }
 
 .image-carousel__modal-nav:hover {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgb(from var(--ink) r g b / 0.8);
 }
 
 .image-carousel__modal-nav--prev {
@@ -230,8 +230,8 @@
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgb(from var(--ink) r g b / 0.6);
+  border: 1px solid rgb(from var(--snow) r g b / 0.3);
   color: white;
   padding: 8px 16px;
   border-radius: 8px;

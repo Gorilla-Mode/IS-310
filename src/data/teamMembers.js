@@ -16,7 +16,7 @@ export const teamMembers = [
     subtitle: 'Ingeniørforkurs, UiA\nMaster i økonomi og adm., UiA / 1. år\nIT og informasjonssystemer, UiA / 5. semester',
     age: '23 år, fra Tvedestrand',
     bio: 'Jeg er liker å lære og forstå hvordan ting fungerer fra grunnen, slik at problemer kan løses på en informert og effektiv måte. Jeg er spesielt interessert i å utvikle løsninger med god en brukeropplevelse både for brukere og medarbeidere. Veldig interessert i systemprogrammering',
-    hobbies: ['Natur fotografi', 'Matlaging', 'Film'],
+    hobbies: ['Natur fotografi', 'Matlaging', 'Fisking'],
     image: `${import.meta.env.BASE_URL}images/tobias-linkedin.jpg`,
     linkedin: 'https://www.linkedin.com/in/tobias-olsen-nodland-44b03a3a0/',
     github: 'https://github.com/Gorilla-Mode',

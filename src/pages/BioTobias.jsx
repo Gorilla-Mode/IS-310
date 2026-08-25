@@ -69,7 +69,6 @@ export default function BioTobias() {
             </button>
 
             <BioHeader member={member}/>
-
             <div className="bio-content">
               <BioCategoryWrapper>
                 <BioImageSection title="Mine interesser"

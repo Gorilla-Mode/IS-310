@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useReveal } from '../hooks/useReveal'
-import groupPhoto from '../assets/group-photo.jpg'
+import groupPhoto from '../assets/group-photo2.jpg'
 import './Home.css'
 
 gsap.registerPlugin(ScrollTrigger)

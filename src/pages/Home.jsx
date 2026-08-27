@@ -66,19 +66,36 @@ export default function Home() {
         </section>
 
         <section className="home-about">
-          <div className="container" ref={aboutRef}>
-            <p className="section-tag mono">Om bachelor</p>
-            <h2 className="section-title">Hva er IS-310?</h2>
-            <p className="section-body">
-              IS-310 er en forberedelse for bachelorprosjekt i informasjonssystemer. I løpet av semesteret
-              skal vi inngå en samarbeidsavtale med en bedrift eller organisasjon.
-            </p>
+          <div className="container project-stack" ref={aboutRef}>
+            <div className="project-copy">
+              <p className="section-tag mono">Om prosjektet</p>
+              <h2 className="section-title">Vi utforsker hvordan kartdata kan gjøre hverdagen enklere.</h2>
+              <p className="section-body">
+                I dette prosjektet undersøker vi hvordan moderne digitale løsninger kan støtte arbeid med kart,
+                geodata og praktiske beslutninger. Målet er å kombinere faglig innsikt, brukervennlighet og
+                konkrete case fra offentlige behov, slik at vi kan utvikle et relevant og anvendelig konsept.
+              </p>
+              <p className="section-body">
+                Gjennom oppgaven får vi erfaring med forskning, samarbeidsarbeid og prototyping i praksis –
+                samtidig som vi utforsker hvordan data kan gjøres mer tilgjengelig, forståelig og nyttig for
+                mennesker i hverdagen.
+              </p>
+              <div className="project-actions">
+                <Link to="/vart-praksisprosjekt" className="btn btn--primary">Se praksisprosjektet</Link>
+              </div>
+            </div>
+
+            <div className="project-media" aria-label="Bildeplasser for prosjektet">
+              <div className="project-placeholder">Bilde av gruppa</div>
+              <div className="project-placeholder project-placeholder--alt">Bilde av helikopter</div>
+            </div>
           </div>
         </section>
 
         <section className="home-links">
           <div className="container home-links__grid" ref={linksRef}>
             {[
+              { to: '/vart-praksisprosjekt', label: 'Vårt praksisprosjekt', desc: 'Nyttige løsninger og case' },
               { to: '/om-oss', label: 'Om oss', desc: 'Hva vi holder på med' },
               { to: '/team',   label: 'Team',   desc: 'Møt gruppen' },
             ].map(({ to, label, desc }) => (

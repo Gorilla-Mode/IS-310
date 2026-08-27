@@ -1,0 +1,291 @@
+:root {
+  --kartverket-green: #00B04F;
+  --kartverket-green-dark: #007A38;
+  --kartverket-blue: #0B4DA2;
+  --kartverket-blue-dark: #063972;
+  --kartverket-bg: #F7F9F6;
+  --kartverket-white: #FFFFFF;
+  --kartverket-tint: #E7F5EC;
+  --kartverket-text: #12241B;
+  --kartverket-muted: #4B5C53;
+  --kartverket-line: #D8E4DC;
+}
+
+.kartverket-page {
+  background: var(--kartverket-bg);
+  color: var(--kartverket-text);
+  font-family: var(--font-body), monospace;
+  min-height: 100vh;
+}
+
+/* Header adjusted only for this page */
+.kartverket-page__header {
+  background: var(--kartverket-blue);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.08);
+  display: flex;
+  justify-content: space-between; /* left and right logos */
+  align-items: center;
+  padding: 10px 24px;
+}
+
+.kartverket-page__logo-left,
+.kartverket-page__logo-right,
+.kartverket-page__logo-left-footer {
+  display: inline-block;
+}
+
+.kartverket-page__logo-left img,
+.kartverket-page__logo-right img,
+.kartverket-page__logo-left-footer img {
+  display: block;
+  height: 34px;
+  width: auto;
+  filter: brightness(1.1);
+}
+
+.kartverket-page__main {
+  width: 100%;
+}
+
+/* Hero with overlayed title (contain image, ensure text not hidden by navbar) */
+.kartverket-page__hero {
+  --scroll-progress: 0;
+  width: 100%;
+  position: relative;
+  display: block;
+  background: transparent;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.kartverket-page__hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(7, 21, 18, 0.45) 0%, rgba(7, 21, 18, 0.18) 38%, rgba(7, 21, 18, 0.12) 100%);
+  z-index: 1;
+}
+
+.kartverket-page__hero-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  object-position: center top;
+  filter: brightness(0.8) saturate(0.85) blur(calc(var(--scroll-progress) * 1.5px));
+  opacity: 1;
+  transform: translateY(calc(var(--scroll-progress) * 18px)) scale(1.01);
+  transition: filter 0.2s ease-out, transform 0.2s ease-out;
+}
+
+.kartverket-page__hero-inner {
+  position: absolute;
+  top: calc(var(--nav-h) + 18px);
+  left: clamp(18px, 4vw, 54px);
+  right: 28px;
+  max-width: 860px;
+  color: var(--kartverket-text);
+  z-index: 2;
+  transform: translateY(calc(var(--scroll-progress) * 18px));
+  transition: transform 0.15s ease-out;
+}
+
+.kartverket-page__headline {
+  font-family: var(--font-heading), sans-serif;
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  margin: 6px 0 0;
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+}
+
+.kartverket-page__eyebrow {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #d7f5e2;
+  margin: 0;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* hide the old title-under-image if it exists */
+.kartverket-page__title-under-image { display: none; }
+
+.kartverket-page__content {
+  width: min(1200px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 24px 0 72px;
+}
+
+.kartverket-page__content h1 {
+  font-family: var(--font-heading), sans-serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  margin: 12px 0 24px;
+}
+
+/* Oppgavebeskrivelse box */
+.kartverket-page__task-box {
+  border: 2px solid var(--kartverket-green);
+  border-radius: 12px;
+  padding: 20px;
+  background: #ffffff;
+  margin-bottom: 28px;
+}
+
+.kartverket-page__task-box h2 {
+  margin: 0 0 12px;
+  font-size: 1.2rem;
+  color: var(--kartverket-green-dark);
+}
+
+.kartverket-page__description {
+  display: block;
+  gap: 24px;
+}
+
+.kartverket-page__description p {
+  margin: 0 0 12px;
+  font-size: 1.06rem;
+  line-height: 1.8;
+  color: var(--kartverket-text);
+  max-width: 1040px;
+}
+
+.kartverket-page__info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  margin-bottom: 48px;
+}
+
+.kartverket-page__info-card {
+  position: relative;
+  background: var(--kartverket-white);
+  border: 1px solid var(--kartverket-line);
+  border-left: 4px solid var(--kartverket-blue);
+  border-radius: 14px;
+  padding: 26px 24px 18px;
+  box-shadow: 0 10px 30px rgba(11, 77, 162, 0.04);
+}
+
+.kartverket-page__info-card--green {
+  border-left-color: var(--kartverket-green);
+}
+
+/* Override the blue card to use Kartverket green outline on this page */
+.kartverket-page__info-card--blue {
+  border-left-color: var(--kartverket-green);
+}
+
+.kartverket-page__info-label {
+  margin: 0 0 14px;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--kartverket-green-dark);
+}
+
+.kartverket-page__info-text {
+  margin: 0;
+  font-size: 1.04rem;
+  line-height: 1.7;
+  color: var(--kartverket-text);
+}
+
+.kartverket-page__tag {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 8px 10px;
+  border-radius: 999px;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.68rem;
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--kartverket-tint);
+  color: var(--kartverket-green-dark);
+}
+
+.kartverket-page__cta-box {
+  background: var(--kartverket-blue);
+  color: #fff;
+  border-radius: 18px;
+  padding: 28px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.kartverket-page__cta-box h2 {
+  margin: 0;
+  font-family: var(--font-heading), sans-serif;
+  font-size: clamp(1.7rem, 3vw, 2.2rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: #fff;
+}
+
+.kartverket-page__cta-box p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.05rem;
+}
+
+.kartverket-page__cta-box a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  margin-top: 6px;
+  padding: 12px 18px;
+  border-radius: 10px;
+  background: #fff;
+  color: var(--kartverket-blue-dark);
+  text-decoration: none;
+  font-weight: 700;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.kartverket-page__cta-box a:hover {
+  transform: translateY(-1px);
+  background: #f3f8ff;
+}
+
+/* Footer adjusted only for this page */
+.kartverket-page__footer {
+  background: var(--kartverket-blue);
+  padding: 10px 24px;
+  text-align: left; /* logo on left */
+}
+
+.kartverket-page__footer img {
+  height: 28px;
+}
+
+@media (max-width: 760px) {
+  .kartverket-page__header {
+    padding: 12px 16px;
+    justify-content: center;
+  }
+
+  .kartverket-page__header img {
+    height: 28px;
+  }
+
+  .kartverket-page__title-under-image {
+    padding: 0 16px;
+  }
+
+  .kartverket-page__content {
+    width: min(100% - 28px, 1200px);
+    padding-top: 20px;
+  }
+
+  .kartverket-page__info-grid {
+    grid-template-columns: 1fr;
+  }
+}

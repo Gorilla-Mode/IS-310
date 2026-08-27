@@ -38,7 +38,7 @@
 }
 
 .footer__logo-text {
-  font-family: var(--font-heading);
+  font-family: var(--font-heading), sans-serif;
   font-weight: 800;
   font-size: 1.1rem;
   color: var(--snow);

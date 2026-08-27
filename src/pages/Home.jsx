@@ -43,7 +43,7 @@ export default function Home() {
                 En gruppe engarsjert gruppe IT-studenter ved UiA som er klare for et spennde bacherlorprosjekt!
               </p>
               <div className="hero__cta" ref={ctaRef}>
-                <Link to="/om-oss" className="btn btn--primary">Introduksjons-video</Link>
+                <Link to="/om-oss" className="btn btn--primary">Introduksjonsvideo</Link>
                 <Link to="/team"   className="btn btn--ghost">Møt teamet</Link>
               </div>
             </div>

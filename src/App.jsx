@@ -1,4 +1,5 @@
-import { HashRouter, Routes, Route } from 'react-router-dom'
+import { useEffect } from 'react'
+import { HashRouter, Routes, Route, useLocation } from 'react-router-dom'
 import './App.css'
 import Navbar      from './components/Navbar'
 import Footer      from './components/Footer'
@@ -10,18 +11,28 @@ import BioTobias   from './pages/BioTobias'
 import BioSivert   from './pages/BioSivert'
 import BioEira     from './pages/BioEira'
 import BioOda      from './pages/BioOda'
+import VartPraksisprosjekt from './pages/VartPraksisprosjekt'
 
+function ScrollToTop() {
+    const { pathname } = useLocation()
 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [pathname])
 
+    return null
+}
 
 export default function App() {
     return (
         <HashRouter>
+            <ScrollToTop />
             <Navbar />
             <main>
                 <Routes>
                     <Route path="/"           element={<Home />} />
                     <Route path="/om-oss"     element={<OmOss />} />
+                    <Route path="/vart-praksisprosjekt" element={<VartPraksisprosjekt />} />
                     <Route path="/team"       element={<Team />} />
                     <Route path="/team/1"     element={<BioIver />} />
                     <Route path="/team/2"     element={<BioTobias />} />
@@ -32,6 +43,6 @@ export default function App() {
             </main>
             <Footer />
         </HashRouter>
- 
+
 )
 }

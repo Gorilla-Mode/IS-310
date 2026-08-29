@@ -146,7 +146,7 @@
   gap: 8px;
   padding: 14px 28px;
   border-radius: 8px;
-  font-family: var(--font-body);
+  font-family: var(--font-body), monospace;
   font-size: 0.95rem;
   font-weight: 500;
   text-decoration: none;
@@ -199,6 +199,56 @@
   color: var(--silver);
   max-width: 640px;
   line-height: 1.75;
+}
+
+.project-stack {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
+  gap: 40px;
+  align-items: center;
+}
+
+.project-copy {
+  max-width: 680px;
+}
+
+.project-actions {
+  margin-top: 28px;
+}
+
+.section-body {
+  margin-bottom: 18px;
+}
+
+.project-media {
+  display: grid;
+  gap: 18px;
+}
+
+.project-placeholder {
+  min-height: 220px;
+  display: grid;
+  place-items: center;
+  border: 2px dashed rgb(from var(--signal) r g b / 0.35);
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgb(from var(--signal) r g b / 0.08), rgb(from var(--accent) r g b / 0.05));
+  color: var(--light);
+  font-family: var(--font-mono), monospace;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-align: center;
+  padding: 24px;
+  box-shadow: inset 0 0 0 1px rgb(from var(--snow) r g b / 0.04);
+}
+
+.project-placeholder--alt {
+  min-height: 180px;
+}
+
+@media (max-width: 760px) {
+  .project-stack {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Group photo */
@@ -280,7 +330,7 @@
 }
 
 .home-link-card__label {
-  font-family: var(--font-heading);
+  font-family: var(--font-heading), sans-serif;
   font-size: 1.15rem;
   font-weight: 700;
   color: var(--ink);

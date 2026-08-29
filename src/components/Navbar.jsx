@@ -7,6 +7,8 @@ import './Navbar.css'
 export default function Navbar() {
   const location = useLocation()
   const isHomePage = location.pathname === '/'
+  const hideAtTopPaths = new Set(['/', '/vart-praksisprosjekt'])
+  const shouldHideAtTopOnPage = hideAtTopPaths.has(location.pathname)
   const [scrolled, setScrolled]   = useState(false)
   const [atTop, setAtTop]         = useState(true)
   const [menuOpen, setMenuOpen]   = useState(false)
@@ -38,7 +40,7 @@ export default function Navbar() {
   }, [menuOpen])
 
   const closeMenu = () => setMenuOpen(false)
-  const shouldHideOnTop = isHomePage && atTop
+  const shouldHideOnTop = shouldHideAtTopOnPage && atTop
 
   return (
     <header className={`navbar${scrolled ? ' navbar--scrolled' : ''}${shouldHideOnTop ? ' navbar--hidden' : ''}`}>

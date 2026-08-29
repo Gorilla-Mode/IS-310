@@ -42,7 +42,7 @@ html::-webkit-scrollbar {
 body {
   background: var(--ink);
   color: var(--light);
-  font-family: var(--font-body);
+  font-family: var(--font-body), monospace;
   font-size: 16px;
   line-height: 1.6;
   font-weight: 400;
@@ -63,7 +63,7 @@ main {
 
 /* ─── Typography ─────────────────────────────────────────────────── */
 h1, h2, h3, h4 {
-  font-family: var(--font-heading);
+  font-family: var(--font-heading), sans-serif;
   font-weight: 800;
   color: var(--snow);
   line-height: 1.05;
@@ -87,7 +87,7 @@ img {
 
 /* ─── Utility ────────────────────────────────────────────────────── */
 .accent { color: var(--accent); }
-.mono   { font-family: var(--font-mono); font-size: 0.8em; }
+.mono   { font-family: var(--font-mono), monospace; font-size: 0.8em; }
 
 .container {
   width: 100%;
@@ -120,4 +120,59 @@ body::after {
   opacity: 0.03;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
   background-size: 200px 200px;
+}
+
+/* Page-specific styling for Kartverket practice page */
+.page--kartverket .navbar {
+  background: var(--kartverket-tint); /* light green, like the other page accent tint */
+  border-bottom-color: rgba(0, 176, 79, 0.12);
+  box-shadow: 0 1px 12px rgba(0, 176, 79, 0.06);
+}
+
+/* Make site title (Bachelorprosjekt) dark green for this page */
+.page--kartverket .navbar__logo-mark {
+  border-color: var(--kartverket-green-dark);
+  box-shadow: 0 0 10px rgba(0, 122, 56, 0.2);
+}
+
+.page--kartverket .navbar__logo-text {
+  color: var(--dark);
+}
+
+.page--kartverket .navbar__logo:hover .navbar__logo-mark {
+  border-color: var(--kartverket-green);
+  box-shadow: 0 0 16px rgba(0, 176, 79, 0.3);
+}
+
+/* Links and burger should be dark (same as other pages) */
+.page--kartverket .navbar__link,
+.page--kartverket .navbar__burger span {
+  color: var(--dark);
+}
+
+.page--kartverket .navbar__link:hover {
+  color: var(--kartverket-green-dark);
+  background: rgba(0, 176, 79, 0.06);
+}
+
+/* Active underline becomes Kartverket dark green */
+.page--kartverket .navbar__link--active::after {
+  background: var(--kartverket-green-dark);
+  box-shadow: 0 0 6px rgba(0,122,56,0.18);
+}
+
+.page--kartverket .navbar__burger span {
+  background: var(--dark);
+}
+
+.page--kartverket .footer {
+  background: var(--kartverket-tint);
+  color: var(--dark);
+  border-top-color: rgba(0, 176, 79, 0.12);
+}
+
+.page--kartverket .footer__logo-text,
+.page--kartverket .footer__nav a,
+.page--kartverket .footer__bottom p {
+  color: var(--dark);
 }

@@ -1,5 +1,6 @@
 /* Hero */
 .hero {
+  --hero-accent: #ff7b8c;
   min-height: 100svh;
   display: flex;
   flex-direction: column;
@@ -7,8 +8,10 @@
   padding-top: var(--nav-h);
   position: relative;
   overflow: hidden;
-  background-image: radial-gradient(circle at center, rgb(from var(--dark) r g b / .075) 1px, transparent 2px);
-  background-size: 40px 40px;
+  background-image: url('../assets/group-photo3-alt.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .hero::before {
@@ -16,10 +19,9 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 100% 60% at 50% 110%, rgb(from var(--signal) r g b / 0.08) 0%, transparent 65%),
-    radial-gradient(ellipse 50% 35% at 8% 35%, rgb(from var(--signal-strong) r g b / 0.04) 0%, transparent 55%),
-    radial-gradient(ellipse 40% 30% at 92% 65%, rgb(from var(--warm) r g b / 0.03) 0%, transparent 50%),
-    linear-gradient(180deg, rgb(from var(--ink) r g b / 0.3) 0%, transparent 40%, rgb(from var(--ink) r g b / 0.6) 100%);
+          radial-gradient(ellipse 100% 60% at 50% 110%, rgb(from var(--signal) r g b / 0.08) 0%, transparent 65%),
+          radial-gradient(ellipse 50% 35% at 8% 35%, rgb(from var(--signal-strong) r g b / 0.04) 0%, transparent 55%),
+          radial-gradient(ellipse 40% 30% at 92% 65%, rgb(from var(--warm) r g b / 0.03) 0%, transparent 50%);
   pointer-events: none;
   z-index: 0;
 }
@@ -27,28 +29,62 @@
 .hero__inner {
   position: relative;
   z-index: 1;
-  padding-top: 80px;
-  padding-bottom: 80px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 64px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: calc(100svh - var(--nav-h));
+  display: flex;
+  align-items: flex-end;
+  padding-left: 32px;
+  padding-right: 32px;
+  box-sizing: border-box;
+  margin-left: 4%;
 }
 
 .hero__content {
-  /* text column */
+  position: relative;
+  z-index: 6;
+  max-width: 640px;
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 16px;
+  min-height: 45dvh;
+  margin-bottom: 50px;
+}
+
+/* Soft radial scrim: no edges, just a glow that lifts the text off the photo */
+.hero__content::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 150%;
+  height: 165%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+          ellipse at center,
+          rgb(from var(--snow) r g b / 0.74) 0%,
+          rgb(from var(--snow) r g b / 0.6) 34%,
+          rgb(from var(--snow) r g b / 0.3) 58%,
+          rgb(from var(--snow) r g b / 0.1) 72%,
+          transparent 84%
+  );
+  pointer-events: none;
+  z-index: -1;
 }
 
 .hero__tag {
   font-size: 0.8rem;
-  color: var(--accent);
+  color: var(--hero-accent);
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  margin-bottom: 24px;
+  margin-bottom: 8px;
 }
 
 .hero__title {
-  font-family: var(--font-display), sans-serif;
+  color: var(--ink);
+  font-family: var(--font-display);
   font-size: clamp(2.8rem, 7vw, 6rem);
   font-weight: 700;
   line-height: 1.1;
@@ -56,9 +92,13 @@
   margin-bottom: 28px;
 }
 
+.hero__title .accent {
+  color: var(--hero-accent);
+}
+
 .hero__sub {
   font-size: 1.15rem;
-  color: var(--silver);
+  color: rgb(from var(--ink) r g b / 0.9);
   max-width: 520px;
   margin-bottom: 40px;
   line-height: 1.7;
@@ -71,56 +111,20 @@
 }
 
 /* Hero image column */
-.hero__photo-frame {
-  border-radius: 14px;
-  overflow: hidden;
-  border: 1px solid rgb(from var(--snow) r g b / 0.07);
-  box-shadow:
-          0 0 0 1px rgb(from var(--signal) r g b / 0.04),
-          0 20px 60px rgb(from var(--ink) r g b / 0.55);
-  position: relative;
-}
-
-.hero__photo-frame::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgb(from var(--ink) r g b / 0.3) 0%, transparent 40%);
-  pointer-events: none;
-}
-
-.hero__photo-img {
-  width: 100%;
-  height: 430px;
-  display: block;
-  object-fit: cover;
-  object-position: center top;
-  transition: transform 0.6s ease;
-}
-
-.hero__photo-frame:hover .hero__photo-img {
-  transform: scale(1.03);
-}
-
-.hero__photo-caption {
-  margin-top: 12px;
-  font-size: 0.7rem;
-  color: var(--silver);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  text-align: center;
-  opacity: 0.6;
-}
-
 @media (max-width: 900px) {
   .hero__inner {
-    grid-template-columns: 1fr;
-    gap: 40px;
+    align-items: center;
+    padding-top: 64px;
+    padding-bottom: 64px;
+    padding-left: 20px;
+    padding-right: 20px;
+
   }
 
-  .hero__photo-img {
-    height: 280px;
-    object-position: center 20%;
+  .hero__content {
+    max-width: 100%;
+    background: none;
+    padding: 4px;
   }
 }
 
@@ -162,13 +166,13 @@
 
 .btn--ghost {
   background: transparent;
-  color: var(--light);
-  border: 1px solid rgb(from var(--snow) r g b / 0.15);
+  color: var(--ink);
+  border: 1px solid rgb(from var(--ink) r g b / 0.45);
 }
 
 .btn--ghost:hover {
-  border-color: var(--accent);
-  color: var(--accent);
+  border-color: var(--hero-accent);
+  color: var(--hero-accent);
 }
 
 /* About section */

@@ -1,18 +1,28 @@
 import { useEffect, useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 import gsap from 'gsap'
 import { navLinks as links } from '../data/navLinks'
 import './Navbar.css'
 
 export default function Navbar() {
+  const location = useLocation()
+  const isHomePage = location.pathname === '/'
+  const hideAtTopPaths = new Set(['/', '/vart-praksisprosjekt'])
+  const shouldHideAtTopOnPage = hideAtTopPaths.has(location.pathname)
   const [scrolled, setScrolled]   = useState(false)
+  const [atTop, setAtTop]         = useState(true)
   const [menuOpen, setMenuOpen]   = useState(false)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40)
+    const onScroll = () => {
+      setAtTop(window.scrollY <= 8)
+      setScrolled(window.scrollY > 40)
+    }
+
+    onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+  }, [isHomePage])
 
   useEffect(() => {
     const tl = gsap.timeline()
@@ -30,9 +40,10 @@ export default function Navbar() {
   }, [menuOpen])
 
   const closeMenu = () => setMenuOpen(false)
+  const shouldHideOnTop = shouldHideAtTopOnPage && atTop
 
   return (
-    <header className={`navbar${scrolled ? ' navbar--scrolled' : ''}`}>
+    <header className={`navbar${scrolled ? ' navbar--scrolled' : ''}${shouldHideOnTop ? ' navbar--hidden' : ''}`}>
       <div className="navbar__inner">
 
         <NavLink to="/" className="navbar__logo" onClick={closeMenu}>

@@ -43,7 +43,7 @@ export default function Home() {
                 <span className="accent">å gjøre</span>
               </h1>
               <p className="hero__sub" ref={subRef}>
-                En gruppe engarsjert gruppe IT-studenter ved UiA som er klare for et spennde bacherlorprosjekt!
+                En engasjert gruppe IT-studenter ved UiA som er klare for et spennende bachelorprosjekt!
               </p>
               <div className="hero__cta" ref={ctaRef}>
                 <Link to="/om-oss" className="btn btn--primary">Introduksjons-video</Link>
@@ -70,7 +70,7 @@ export default function Home() {
             <p className="section-tag mono">Om bachelor</p>
             <h2 className="section-title">Hva er IS-310?</h2>
             <p className="section-body">
-              IS-310 er en forberedelse for bachelorprosjekt i informasjonssystemer. I løpet av semesteret
+              IS-310 er et forberedende emne til bachelorprosjektet i informasjonssystemer. I løpet av semesteret
               skal vi inngå en samarbeidsavtale med en bedrift eller organisasjon.
             </p>
           </div>

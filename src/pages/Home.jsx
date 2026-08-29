@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useReveal } from '../hooks/useReveal'
-import groupPhoto from '../assets/group-photo.jpg'
 import './Home.css'
+import helibilde from '../assets/heli1.jpg'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -14,7 +14,6 @@ export default function Home() {
   const titleRef  = useRef(null)
   const subRef    = useRef(null)
   const ctaRef    = useRef(null)
-  const photoRef  = useRef(null)
 
   const aboutRef  = useReveal({ delay: 0.1 })
   const linksRef  = useReveal({ delay: 0.15 })
@@ -26,7 +25,6 @@ export default function Home() {
           .from(titleRef.current, { y: 50, opacity: 0, duration: 1.0, clearProps: 'all' }, '-=0.4')
           .from(subRef.current,   { y: 30, opacity: 0, duration: 0.8, clearProps: 'all' }, '-=0.6')
           .from(ctaRef.current,   { y: 20, opacity: 0, duration: 0.6, clearProps: 'all' }, '-=0.5')
-          .from(photoRef.current, { x: 40, opacity: 0, duration: 1.0, clearProps: 'all' }, '-=0.8')
     }, heroRef)
 
     return () => ctx.revert()
@@ -43,29 +41,27 @@ export default function Home() {
                 <span className="accent">å gjøre</span>
               </h1>
               <p className="hero__sub" ref={subRef}>
-                En gruppe engarsjert gruppe IT-studenter ved UiA som er klare for et spennde bacherlorprosjekt!
+                En engasjert gruppe IT-studenter ved UiA som er klare for et spennende bachelorprosjekt!
               </p>
               <div className="hero__cta" ref={ctaRef}>
-                <Link to="/om-oss" className="btn btn--primary">Introduksjons-video</Link>
+                <Link to="/om-oss" className="btn btn--primary">Introduksjonsvideo</Link>
                 <Link to="/team"   className="btn btn--ghost">Møt teamet</Link>
               </div>
             </div>
 
-            <div className="hero__image" ref={photoRef}>
-              <div className="hero__photo-frame">
-                <img
-                    src={groupPhoto}
-                    alt="Bachelor gruppen foran et luftambulanse-helikopter"
-                    className="hero__photo-img"
-                />
-              </div>
-              <p className="hero__photo-caption mono">IS-310 bachelorgruppen</p>
-            </div>
           </div>
           <div className="hero__line" aria-hidden="true" />
         </section>
 
         <section className="home-about">
+          <div className="container" ref={aboutRef}>
+            <p className="section-tag mono">Om bachelor</p>
+            <h2 className="section-title">Hva er IS-310?</h2>
+            <p className="section-body">
+              IS-310 er et forberedende emne til bachelorprosjektet i informasjonssystemer. I løpet av semesteret
+              skal vi inngå en samarbeidsavtale med en bedrift eller organisasjon.
+            </p>
+          </div>
           <div className="container project-stack" ref={aboutRef}>
             <div className="project-copy">
               <p className="section-tag mono">Om prosjektet</p>
@@ -86,8 +82,7 @@ export default function Home() {
             </div>
 
             <div className="project-media" aria-label="Bildeplasser for prosjektet">
-              <div className="project-placeholder">Bilde av gruppa</div>
-              <div className="project-placeholder project-placeholder--alt">Bilde av helikopter</div>
+              <img src={helibilde} alt="Bilde av helikopter" />
             </div>
           </div>
         </section>

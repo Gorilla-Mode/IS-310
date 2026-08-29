@@ -17,6 +17,7 @@ export default function Footer() {
           <NavLink to="/om-oss">Om oss</NavLink>
           <NavLink to="/vart-praksisprosjekt">Vårt praksisprosjekt</NavLink>
           <NavLink to="/team">Team</NavLink>
+            <NavLink to="/VaartPraksisProsjekt">Vårt praksisprosjekt</NavLink>
         </nav>
       </div>
 

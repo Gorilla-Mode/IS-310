@@ -73,7 +73,7 @@ export default function BioTobias() {
               <BioCategoryWrapper>
                 <BioImageSection title="Mine interesser"
                                  image={`${import.meta.env.BASE_URL}images/tobias/9e529c5b-f66c-4eb5-8f65-aec4f91d0773.jpg`}>
-                  <p>Jeg har mange i interesser, men en av de største er interessen min i teknologi. Den dekker egentlig
+                  <p>Jeg har mange interesser, men en av de største er interessen min for teknologi. Den dekker egentlig
                     alt fra spill til programmering,
                     og er noe som jeg alltid har vært veldig interessert i.</p>
                   <p> Utenom teknologi er jeg også veldig glad i matlaging, fordi jeg liker mat og da er det jo ganske
@@ -85,21 +85,21 @@ export default function BioTobias() {
                     og carbonara som er favoritten, og da mener jeg carbonara laget med pecorino, egg og guanciale.</p>
                 </BioImageSection>
                 <BioTextSection>
-                  <p>Jeg er også veldig glad i fotografi, og har som regel med meg kamera når jeg på tur eller fisker,
+                  <p>Jeg er også veldig glad i fotografi, og har som regel med meg kamera når jeg er på tur eller fisker,
                     men
-                    det er også ofte jeg drar ut med mål å bare ta bilder. Jeg pleier å ta bilder først og fremst på en
+                    det er også ofte jeg drar ut med mål om å bare ta bilder. Jeg pleier å ta bilder først og fremst på en
                     analog
-                    Nikon F3 fordi jeg syntes det er lite som kan måle seg med tonene en får fra film. Men jeg tar også
+                    Nikon F3 fordi jeg synes det er lite som kan måle seg med tonene en får fra film. Men jeg tar også
                     mye
-                    bilder på digtal.</p>
-                  <p>I løpet av sommeren har jeg fisket mye, og satt ny aure rekord på 1220g. Jeg har også startet ett lite prosjekt
+                    bilder på digtalt.</p>
+                  <p>I løpet av sommeren har jeg fisket mye, og satt ny aure rekord på 1220 g. Jeg har også startet et lite prosjekt
                     med å fange alle ferskvannsartene i Norge på stang (med unntak av karpefisk), til nå har jeg fanget aure, tryte, gjedde og røye. Røya 
                   var på isfiske, så den må tas på nytt.</p>
                 </BioTextSection>
                 <br/>
-                <BioImageSection title="Foto galleri">
+                <BioImageSection title="Fotogalleri">
                   <ImageCarousel images={tobiasImages} title="Tobias"/>
-                  <p>Her er noen av favoritt bildene jeg har tatt med ulike motiver.</p>
+                  <p>Her er noen av favorittbildene jeg har tatt med ulike motiver.</p>
                 </BioImageSection>
               </BioCategoryWrapper>
               <Projects

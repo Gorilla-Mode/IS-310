@@ -11,23 +11,27 @@ import BioSivert   from './pages/BioSivert'
 import BioEira     from './pages/BioEira'
 import BioOda      from './pages/BioOda'
 
+
+
+
 export default function App() {
-  return (
-    <HashRouter>
-      <Navbar />
-      <main>
-        <Routes>
-          <Route path="/"           element={<Home />} />
-          <Route path="/om-oss"     element={<OmOss />} />
-          <Route path="/team"       element={<Team />} />
-          <Route path="/team/1"     element={<BioIver />} />
-          <Route path="/team/2"     element={<BioTobias />} />
-          <Route path="/team/3"     element={<BioSivert />} />
-          <Route path="/team/4"     element={<BioEira />} />
-          <Route path="/team/5"     element={<BioOda />} />
-        </Routes>
-      </main>
-      <Footer />
-    </HashRouter>
-  )
+    return (
+        <HashRouter>
+            <Navbar />
+            <main>
+                <Routes>
+                    <Route path="/"           element={<Home />} />
+                    <Route path="/om-oss"     element={<OmOss />} />
+                    <Route path="/team"       element={<Team />} />
+                    <Route path="/team/1"     element={<BioIver />} />
+                    <Route path="/team/2"     element={<BioTobias />} />
+                    <Route path="/team/3"     element={<BioSivert />} />
+                    <Route path="/team/4"     element={<BioEira />} />
+                    <Route path="/team/5"     element={<BioOda />} />
+                </Routes>
+            </main>
+            <Footer />
+        </HashRouter>
+ 
+)
 }

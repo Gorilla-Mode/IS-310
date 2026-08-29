@@ -15,6 +15,7 @@ export default function Footer() {
 
         <nav className="footer__nav" aria-label="Fotnav">
           <NavLink to="/om-oss">Om oss</NavLink>
+          <NavLink to="/vart-praksisprosjekt">Vårt praksisprosjekt</NavLink>
           <NavLink to="/team">Team</NavLink>
             <NavLink to="/VaartPraksisProsjekt">Vårt praksisprosjekt</NavLink>
         </nav>

@@ -62,7 +62,7 @@
 }
 
 .navbar__logo-text {
-  font-family: var(--font-heading);
+  font-family: var(--font-heading), sans-serif;
   font-weight: 800;
   font-size: 1.1rem;
   color: var(--snow);
@@ -77,7 +77,7 @@
 }
 
 .navbar__link {
-  font-family: var(--font-body);
+  font-family: var(--font-body), monospace;
   font-size: 0.875rem;
   font-weight: 500;
   color: var(--silver);
@@ -163,7 +163,7 @@
 }
 
 .nav-mobile__link {
-  font-family: var(--font-heading);
+  font-family: var(--font-heading), sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--light);

@@ -65,11 +65,9 @@ export default function Home() {
           <div className="container project-stack" ref={aboutRef}>
             <div className="project-copy">
               <p className="section-tag mono">Om prosjektet</p>
-              <h2 className="section-title">Vi utforsker hvordan kartdata kan gjøre hverdagen enklere.</h2>
+              <h2 className="section-title">Luftfartshindre</h2>
               <p className="section-body">
-                I dette prosjektet undersøker vi hvordan moderne digitale løsninger kan støtte arbeid med kart,
-                geodata og praktiske beslutninger. Målet er å kombinere faglig innsikt, brukervennlighet og
-                konkrete case fra offentlige behov, slik at vi kan utvikle et relevant og anvendelig konsept.
+                I sammarbeid med Kartverket og Norsk Luftambulanse utvikler vi et system som gjør det enklere for piloter og flybesetning å melde inn luftfartshindre, som kraftlinjer, master og stolper, direkte i kart, under flygning.
               </p>
               <p className="section-body">
                 Gjennom oppgaven får vi erfaring med forskning, samarbeidsarbeid og prototyping i praksis –

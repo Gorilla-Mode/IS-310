@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import './VartPraksisprosjekt.css'
 import gruppebilde from '../assets/gruppebilde.jpg'
+import helibilde from '../assets/heli2.jpg'
 
 export default function VartPraksisprosjekt() {
   const heroRef = useRef(null)
@@ -61,7 +62,7 @@ export default function VartPraksisprosjekt() {
           </div>
 
           <section className="kartverket-page__image-section">
-            <div className="kartverket-page__image-placeholder">Bilde av helikopter</div>
+            <img src={helibilde} alt="Bilde av helikopter" className="kartverket-page__image" />
             <p className="kartverket-page__image-caption">Luftfartshindre er spesielt kritiske ved lavtflyging med helikopter.</p>
           </section>
 

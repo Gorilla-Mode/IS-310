@@ -4,6 +4,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useReveal } from '../hooks/useReveal'
 import './Home.css'
+import helibilde from '../assets/heli1.jpg'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -81,8 +82,7 @@ export default function Home() {
             </div>
 
             <div className="project-media" aria-label="Bildeplasser for prosjektet">
-              <div className="project-placeholder">Bilde av gruppa</div>
-              <div className="project-placeholder project-placeholder--alt">Bilde av helikopter</div>
+              <img src={helibilde} alt="Bilde av helikopter" />
             </div>
           </div>
         </section>

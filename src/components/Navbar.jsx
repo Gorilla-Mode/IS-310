@@ -47,8 +47,7 @@ export default function Navbar() {
       <div className="navbar__inner">
 
         <NavLink to="/" className="navbar__logo" onClick={closeMenu}>
-          <span className="navbar__logo-mark" aria-hidden="true" />
-          <span className="navbar__logo-text">Bachelorprosjekt</span>
+          <span className="navbar__logo-text">MUTEX</span>
         </NavLink>
 
         <nav className="navbar__links" aria-label="Primær navigasjon">

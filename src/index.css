@@ -22,6 +22,7 @@
   --font-display: 'acumin-pro', sans-serif;
   --font-body:    'JetBrains Mono', ui-monospace, monospace;
   --font-mono:    'JetBrains Mono', ui-monospace, monospace;
+  --font-logo:    "Rubik Broken Fax", sans-serif;
 
   --nav-h: 72px;
 }
@@ -32,8 +33,6 @@
   margin: 0;
   padding: 0;
 }
-
-
 
 html::-webkit-scrollbar {
   display: none;

@@ -69,7 +69,7 @@ export default function VartPraksisprosjekt() {
           <section className="kartverket-page__cta-box">
             <h2>Vil du vite mer?</h2>
             <p>Les mer om oss og prosjektet på 302-siden.</p>
-            <a href="#" aria-label="Gå til 302-siden">Gå til 302-siden →</a>
+            <a href="https://iverkroken.github.io/IS-302/#/" aria-label="Gå til 302-siden">Gå til 302-siden →</a>
           </section>
         </section>
       </main>

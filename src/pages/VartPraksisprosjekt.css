@@ -12,7 +12,7 @@
 }
 
 .kartverket-page {
-  background: var(--ink);
+  background: var(--paper);
   color: var(--kartverket-text);
   font-family: var(--font-body), monospace;
   min-height: 100vh;

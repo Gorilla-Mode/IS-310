@@ -3,4 +3,5 @@ export const navLinks = [
   { to: '/om-oss',               label: 'Om oss' },
   { to: '/team',                 label: 'Team' },
   { to: '/vart-praksisprosjekt', label: 'Vårt praksisprosjekt' },
+  { to: '/kontakt',              label: 'Kontakt', cta: true },
 ]

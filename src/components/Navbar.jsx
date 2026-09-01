@@ -1,102 +1,170 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
-import gsap from 'gsap'
-import { navLinks as links } from '../data/navLinks'
+import { navLinks } from '../data/navLinks'
 import './Navbar.css'
 
+/** Sider med hero. Der ligger navbaren transparent over toppen. */
+const HERO_PATHS = new Set(['/', '/vart-praksisprosjekt'])
+
+/** Én terskel. Over den er navbaren eggskall, under er den transparent
+ på hero-sider. Navbaren skjules aldri. */
+const SCROLL_THRESHOLD = 80
+
+const FOCUSABLE = 'a[href], button:not([disabled])'
+
 export default function Navbar() {
-  const location = useLocation()
-  const isHomePage = location.pathname === '/'
-  const hideAtTopPaths = new Set(['/', '/vart-praksisprosjekt'])
-  const shouldHideAtTopOnPage = hideAtTopPaths.has(location.pathname)
-  const [scrolled, setScrolled]   = useState(false)
-  const [atTop, setAtTop]         = useState(true)
-  const [menuOpen, setMenuOpen]   = useState(false)
+  const { pathname } = useLocation()
+  const [scrolled, setScrolled] = useState(false)
 
+  /* Menyen huskes sammen med ruten den ble åpnet på, slik at et
+     rutebytte lukker den uten en ekstra effekt-runde. */
+  const [menu, setMenu] = useState({ open: false, path: pathname })
+  const menuOpen = menu.open && menu.path === pathname
+
+  const drawerRef = useRef(null)
+  const burgerRef = useRef(null)
+
+  const transparent = HERO_PATHS.has(pathname) && !scrolled
+
+  /* Scroll-lytter: passiv, og throttlet med requestAnimationFrame. */
   useEffect(() => {
+    let frame = null
+
+    const read = () => {
+      frame = null
+      setScrolled(window.scrollY > SCROLL_THRESHOLD)
+    }
+
     const onScroll = () => {
-      setAtTop(window.scrollY <= 8)
-      setScrolled(window.scrollY > 40)
+      if (frame === null) frame = window.requestAnimationFrame(read)
     }
 
-    onScroll()
+    read()
     window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [isHomePage])
 
-  useEffect(() => {
-    const tl = gsap.timeline()
-    if (menuOpen) {
-      document.body.style.overflow = 'hidden'
-      tl.to('.nav-mobile', { x: 0, duration: 0.45, ease: 'expo.out' })
-        .from('.nav-mobile a', {
-          x: 30, opacity: 0, stagger: 0.05, duration: 0.35, ease: 'expo.out',
-        }, '-=0.2')
-    } else {
-      document.body.style.overflow = ''
-      tl.to('.nav-mobile', { x: '100%', duration: 0.35, ease: 'expo.in' })
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      if (frame !== null) window.cancelAnimationFrame(frame)
     }
-    return () => tl.kill()
-  }, [menuOpen])
+  }, [])
 
-  const closeMenu = () => setMenuOpen(false)
-  const shouldHideOnTop = shouldHideAtTopOnPage && atTop
+  const openMenu = () => setMenu({ open: true, path: pathname })
+  const closeMenu = () => setMenu({ open: false, path: pathname })
+
+  /* Åpen drawer: låst body, Escape lukker, fokus holdes inne i drawer,
+     og fokus går tilbake til hamburgeren når den lukkes. */
+  useEffect(() => {
+    if (!menuOpen) return
+
+    const drawer = drawerRef.current
+    const burger = burgerRef.current
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    drawer?.querySelector(FOCUSABLE)?.focus()
+
+    const onKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        setMenu({ open: false, path: pathname })
+        return
+      }
+      if (event.key !== 'Tab' || !drawer) return
+
+      const items = Array.from(drawer.querySelectorAll(FOCUSABLE))
+      if (items.length === 0) return
+
+      const first = items[0]
+      const last = items[items.length - 1]
+
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault()
+        last.focus()
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault()
+        first.focus()
+      }
+    }
+
+    document.addEventListener('keydown', onKeyDown)
+
+    return () => {
+      document.removeEventListener('keydown', onKeyDown)
+      document.body.style.overflow = previousOverflow
+      if (burger && document.body.contains(burger)) burger.focus()
+    }
+  }, [menuOpen, pathname])
+
+  const linkClass = ({ isActive }) =>
+      'navbar__link' + (isActive ? ' navbar__link--active' : '')
+
+  const ctaClass = ({ isActive }) =>
+      'navbar__contact-cta' + (isActive ? ' navbar__contact-cta--active' : '')
+
+  const drawerLinkClass = ({ isActive }) =>
+      'nav-drawer__link' + (isActive ? ' nav-drawer__link--active' : '')
 
   return (
-    <header className={`navbar${scrolled ? ' navbar--scrolled' : ''}${shouldHideOnTop ? ' navbar--hidden' : ''}`}>
-      <div className="navbar__inner">
-
-        <NavLink to="/" className="navbar__logo" onClick={closeMenu}>
-          <span className="navbar__logo-text">MUTEX</span>
-        </NavLink>
-
-        <nav className="navbar__links" aria-label="Primær navigasjon">
-          {links.map(({ to, label }) => (
-            <NavLink
-              key={to}
-              to={to}
-              end={to === '/'}
-              className={({ isActive }) =>
-                'navbar__link' + (isActive ? ' navbar__link--active' : '')
-              }
-            >
-              {label}
-            </NavLink>
-          ))}
-        </nav>
-
-        <button
-          className={`navbar__burger${menuOpen ? ' navbar__burger--open' : ''}`}
-          onClick={() => setMenuOpen(o => !o)}
-          aria-label={menuOpen ? 'Lukk meny' : 'Åpne meny'}
-          aria-expanded={menuOpen}
-        >
-          <span />
-          <span />
-          <span />
-        </button>
-      </div>
-
-      {/* Mobile drawer */}
-      <nav className="nav-mobile" aria-label="Mobilmeny" aria-hidden={!menuOpen}>
-        {links.map(({ to, label }) => (
-          <NavLink
-            key={to}
-            to={to}
-            end={to === '/'}
-            className={({ isActive }) =>
-              'nav-mobile__link' + (isActive ? ' nav-mobile__link--active' : '')
-            }
-            onClick={closeMenu}
-          >
-            {label}
+      <header className={`navbar ${transparent ? 'navbar--transparent' : 'navbar--solid'}`}>
+        <div className="navbar__inner">
+          <NavLink to="/" end className="navbar__logo mutex-logo">
+            MUTEX
           </NavLink>
-        ))}
-      </nav>
 
-      {menuOpen && (
-        <div className="nav-mobile__backdrop" onClick={closeMenu} aria-hidden="true" />
-      )}
-    </header>
+          <nav className="navbar__nav" aria-label="Hovednavigasjon">
+            <ul className="navbar__links">
+              {navLinks.map(({ to, label, cta }) => (
+                  <li key={to}>
+                    <NavLink to={to} end={to === '/'} className={cta ? ctaClass : linkClass}>
+                      {label}
+                    </NavLink>
+                  </li>
+              ))}
+            </ul>
+          </nav>
+
+          <button
+              ref={burgerRef}
+              type="button"
+              className="navbar__burger"
+              aria-expanded={menuOpen}
+              aria-controls="mobile-menu"
+              aria-label="Åpne meny"
+              onClick={openMenu}
+          >
+            <span aria-hidden="true" />
+            <span aria-hidden="true" />
+          </button>
+        </div>
+
+        <div id="mobile-menu" className="nav-drawer" ref={drawerRef} hidden={!menuOpen}>
+          <div className="nav-drawer__top">
+            <button
+                type="button"
+                className="nav-drawer__close"
+                aria-label="Lukk meny"
+                onClick={closeMenu}
+            >
+              <span aria-hidden="true" />
+              <span aria-hidden="true" />
+            </button>
+          </div>
+
+          <nav className="nav-drawer__nav" aria-label="Mobilmeny">
+            <ul className="nav-drawer__links">
+              {navLinks.map(({ to, label }) => (
+                  <li key={to}>
+                    <NavLink
+                        to={to}
+                        end={to === '/'}
+                        onClick={closeMenu}
+                        className={drawerLinkClass}
+                    >
+                      {label}
+                    </NavLink>
+                  </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+      </header>
   )
 }

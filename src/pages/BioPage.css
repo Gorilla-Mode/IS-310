@@ -50,7 +50,7 @@
   padding: 16px;
   background: rgb(from var(--snow) r g b / 0.0025);
   backdrop-filter: blur(1px);
-  box-shadow: 0 4px 6px rgb(from var(--ink) r g b / 0.1);
+  box-shadow: 0 4px 6px rgb(from var(--paper) r g b / 0.1);
 }
 
 @media (max-width: 768px) {

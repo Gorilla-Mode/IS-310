@@ -99,7 +99,7 @@
 .project-card:hover {
   transform: translateY(-4px);
   border-color: rgb(from var(--signal) r g b / 0.2);
-  box-shadow: 0 8px 36px rgb(from var(--ink) r g b / 0.45);
+  box-shadow: 0 8px 36px rgb(from var(--paper) r g b / 0.45);
 }
 
 .project-card:hover::before {
@@ -117,7 +117,7 @@
   font-family: var(--font-heading), sans-serif;
   font-size: 1.1rem;
   font-weight: 700;
-  color: var(--ink);
+  color: var(--paper);
   line-height: 1.2;
 }
 

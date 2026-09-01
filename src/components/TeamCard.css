@@ -1,6 +1,6 @@
 /* ── Card ────────────────────────────────────────────────────────── */
 .team-card {
-  background: var(--ink-dark);
+  background: var(--paper-dark);
   border: 1px solid rgb(from var(--snow) r g b / 0.06);
   border-radius: 16px;
   overflow: hidden;

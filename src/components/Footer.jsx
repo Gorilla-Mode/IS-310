@@ -1,30 +1,68 @@
 import { NavLink } from 'react-router-dom'
+import { navLinks } from '../data/navLinks'
+import { TEAM_EMAILS } from '../data/contact'
 import './Footer.css'
+
+const GITHUB_URL = 'https://github.com/Gorilla-Mode/IS-310'
+const IS_302_URL = 'https://iverkroken.github.io/IS-302/'
 
 export default function Footer() {
   return (
-    <footer className="footer">
-      <div className="container footer__inner">
-        <div className="footer__brand">
-          <div className="footer__identity">
-            <span className="footer__logo-mark" aria-hidden="true" />
-            <span className="footer__logo-text">IS-310</span>
+      <footer className="footer">
+        <div className="footer__grid">
+          <div className="footer__col footer__col--brand">
+            <span className="mutex-logo footer__logo">MUTEX</span>
+            <p className="footer__meta">
+              Bachelorprosjekt IS-310 · Januar til juni 2027
+            </p>
           </div>
-          <p className="footer__sub">Bachelor ved Universitetet i Agder</p>
+
+          <div className="footer__col">
+            <h2 className="footer__title label-mono">SIDER</h2>
+            <nav className="footer__links" aria-label="Bunnavigasjon">
+              {navLinks.map(({ to, label }) => (
+                  <NavLink key={to} to={to} end={to === '/'} className="footer__link">
+                    {label}
+                  </NavLink>
+              ))}
+            </nav>
+          </div>
+
+          <div className="footer__col">
+            <h2 className="footer__title label-mono">KONTAKT</h2>
+            <ul className="footer__contacts">
+              {TEAM_EMAILS.map(({ name, email, mailto }) => (
+                  <li className="footer__contact" key={name}>
+                    <span className="footer__contact-name">{name}</span>
+                    <a className="footer__contact-email" href={mailto}>
+                      {email}
+                    </a>
+                  </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="footer__col">
+            <h2 className="footer__title label-mono">PERIODE</h2>
+            <p className="footer__period">
+              Januar til<br />
+              juni 2027
+            </p>
+          </div>
         </div>
 
-        <nav className="footer__nav" aria-label="Fotnav">
-          <NavLink to="/om-oss">Om oss</NavLink>
-          <NavLink to="/vart-praksisprosjekt">Vårt praksisprosjekt</NavLink>
-          <NavLink to="/team">Team</NavLink>
-            <NavLink to="/VaartPraksisProsjekt">Vårt praksisprosjekt</NavLink>
-        </nav>
-      </div>
-
-      <div className="container footer__bottom">
-        <p className="mono">© {new Date().getFullYear()} IS-310 Gruppe ved UiA</p>
-        <p className="mono footer__built">Bygget med React + Vite</p>
-      </div>
-    </footer>
+        <div className="footer__bottom">
+          <div className="footer__bottom-left">
+            <p>Universitetet i Agder · IS-310, 2026/27</p>
+            <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer">
+              GitHub
+            </a>
+            <a href={IS_302_URL} target="_blank" rel="noopener noreferrer">
+              Tidligere prosjektside, IS-302
+            </a>
+          </div>
+          <p className="footer__place">Kristiansand, Norge</p>
+        </div>
+      </footer>
   )
 }

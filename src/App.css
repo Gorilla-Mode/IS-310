@@ -1,40 +1,17 @@
-:root {
-  --ink: #F8EDDD;
-  --stone: #f0eee9;
-  --ash: #FEE7E8;
-  --fog: #ddd3c9;
-  --mist: #b9b0a8;
-  --silver: #5d6067;
-  --light: #1b1c1f;
-  --snow: #121417;
-  --accent: #c6102e;
-  --glow: #b20f2d;
-  --warm: #ff6b35;
-  --void: #FEE7E8;
-  --signal: #d91231;
-  --signal-strong: #c6102e;
-  --linkedin: #0a66c2;
-  --dark: #131E29
-}
+/* Designtokens ligger i src/index.css. Denne filen hadde en duplisert
+   :root-blokk som overstyrte dem, blant annet med rødtoner utenfor
+   palettet. Den er fjernet.
 
-.counter {
-  font-size: 16px;
-  padding: 5px 10px;
-  border-radius: 5px;
-  color: var(--accent);
-  background: var(--accent-bg);
-  border: 2px solid transparent;
-  transition: border-color 0.3s;
-  margin-bottom: 24px;
+   Reglene under er rester fra Vite-startmalen. .counter, #next-steps,
+   #docs, #spacer og .ticks refererte tokens som aldri har vært
+   definert i dette prosjektet (--accent-bg, --accent-border, --border,
+   --text-h, --social-bg, --shadow) og er fjernet i fase A.
 
-  &:hover {
-    border-color: var(--accent-border);
-  }
-  &:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 2px;
-  }
-}
+   .hero og #center refererer ingen tokens og står derfor igjen, men
+   begge er døde: .hero-blokkens eneste levende deklarasjon,
+   position: relative, settes allerede av Home.css, og barna .base,
+   .framework og .vite finnes ikke i src/. #center brukes ingen steder.
+   Rapportert som slettekandidater til en senere runde. */
 
 .hero {
   position: relative;
@@ -62,7 +39,7 @@
     top: 34px;
     height: 28px;
     transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
-      scale(1.4);
+    scale(1.4);
   }
 
   .vite {
@@ -71,7 +48,7 @@
     height: 26px;
     width: auto;
     transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
-      scale(0.8);
+    scale(0.8);
   }
 }
 
@@ -86,118 +63,5 @@
   @media (max-width: 1024px) {
     padding: 32px 20px 24px;
     gap: 18px;
-  }
-}
-
-#next-steps {
-  display: flex;
-  border-top: 1px solid var(--border);
-  text-align: left;
-
-  & > div {
-    flex: 1 1 0;
-    padding: 32px;
-    @media (max-width: 1024px) {
-      padding: 24px 20px;
-    }
-  }
-
-  .icon {
-    margin-bottom: 16px;
-    width: 22px;
-    height: 22px;
-  }
-
-  @media (max-width: 1024px) {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-
-#docs {
-  border-right: 1px solid var(--border);
-
-  @media (max-width: 1024px) {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-  }
-}
-
-#next-steps ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  gap: 8px;
-  margin: 32px 0 0;
-
-  .logo {
-    height: 18px;
-  }
-
-  a {
-    color: var(--text-h);
-    font-size: 16px;
-    border-radius: 6px;
-    background: var(--social-bg);
-    display: flex;
-    padding: 6px 12px;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    transition: box-shadow 0.3s;
-
-    &:hover {
-      box-shadow: var(--shadow);
-    }
-    .button-icon {
-      height: 18px;
-      width: 18px;
-    }
-  }
-
-  @media (max-width: 1024px) {
-    margin-top: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    li {
-      flex: 1 1 calc(50% - 8px);
-    }
-
-    a {
-      width: 100%;
-      justify-content: center;
-      box-sizing: border-box;
-    }
-  }
-}
-
-#spacer {
-  height: 88px;
-  border-top: 1px solid var(--border);
-  @media (max-width: 1024px) {
-    height: 48px;
-  }
-}
-
-.ticks {
-  position: relative;
-  width: 100%;
-
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    top: -4.5px;
-    border: 5px solid transparent;
-  }
-
-  &::before {
-    left: 0;
-    border-left-color: var(--border);
-  }
-  &::after {
-    right: 0;
-    border-right-color: var(--border);
   }
 }

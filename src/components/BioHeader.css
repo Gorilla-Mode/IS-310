@@ -31,7 +31,7 @@
   height: auto;
   aspect-ratio: 4 / 5;
   object-fit: cover;
-  filter: saturate(0.82) contrast(1.02);
+
   transition: transform 600ms ease;
 }
 

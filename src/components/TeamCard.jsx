@@ -44,12 +44,14 @@ export default function TeamCard({ member }) {
             </div>
 
             <div className="team-card__body">
-                <h3 className="team-card__name">{name}</h3>
+                <div className="team-card__intro">
+                    <h3 className="team-card__name">{name}</h3>
 
-                <p className="team-card__origin">{age} år, fra {hometown}.</p>
+                    <p className="team-card__origin">{age} år, fra {hometown}.</p>
 
-                {/* Originalteksten fra teamMembers.js. Klippes kun visuelt av CSS. */}
-                <p className="team-card__desc">{bio}</p>
+                    {/* Originalteksten fra teamMembers.js. Klippes kun visuelt av CSS. */}
+                    <p className="team-card__desc">{bio}</p>
+                </div>
 
                 <div className="team-card__block team-card__block--ansvar">
                     <p className="team-card__label">Ansvar</p>

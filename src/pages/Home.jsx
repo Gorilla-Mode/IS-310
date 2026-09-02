@@ -69,7 +69,7 @@ export default function Home() {
           <div className="container project-stack" ref={projectRef}>
             <div className="project-copy">
               <p className="section-tag mono">Om prosjektet</p>
-              <h2 className="section-title">Luftfartshindre</h2>
+              <h2 className="section-title">NRL-Prosjekt</h2>
               <p className="section-body">
                 I samarbeid med Kartverket og Norsk Luftambulanse utvikler vi et system som gjør det enklere for piloter og flybesetning å melde inn luftfartshindre, som kraftlinjer, master og stolper, direkte i kart, under flygning.
               </p>

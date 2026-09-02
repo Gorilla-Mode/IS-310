@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import { navLinks } from '../data/navLinks'
-import { TEAM_EMAILS } from '../data/contact'
+import { LEAD } from '../data/contact'
 import './Footer.css'
 
 const GITHUB_URL = 'https://github.com/Gorilla-Mode/IS-310'
@@ -31,14 +31,13 @@ export default function Footer() {
           <div className="footer__col">
             <h2 className="footer__title label-mono">KONTAKT</h2>
             <ul className="footer__contacts">
-              {TEAM_EMAILS.map(({ name, email, mailto }) => (
-                  <li className="footer__contact" key={name}>
-                    <span className="footer__contact-name">{name}</span>
-                    <a className="footer__contact-email" href={mailto}>
-                      {email}
-                    </a>
-                  </li>
-              ))}
+              <li className="footer__contact">
+                <span className="footer__contact-name">{LEAD.name}</span>
+                <span className="footer__contact-role">{LEAD.role}</span>
+                <a className="footer__contact-email" href={LEAD.mailto}>
+                  {LEAD.email}
+                </a>
+              </li>
             </ul>
           </div>
 

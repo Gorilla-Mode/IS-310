@@ -84,6 +84,14 @@
   color: color-mix(in srgb, var(--off-white) 76%, transparent);
 }
 
+.footer__contact-role {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 1.4;
+  text-transform: uppercase;
+  color: var(--on-ink-muted);
+}
+
 .footer__contact-email {
   align-self: flex-start;
   font-family: var(--font-mono);

@@ -188,14 +188,14 @@
    ═══════════════════════════════════════════════════════════════════ */
 
 .team-card__block--ansvar {
-  margin-top: 16px;
-  margin-bottom: 14px;
-  min-height: 128px;
+  margin-top: 12px;
+  margin-bottom: 8px;
+  min-height: 92px;
 }
 
 .team-card__tags {
   height: auto;
-  min-height: 88px;
+  min-height: 66px;
 
   list-style: none;
   margin: 0;
@@ -240,7 +240,7 @@
 .team-card__divider {
   height: 0;
 
-  margin: 10px 0 14px;
+  margin: 6px 0 8px;
 
   border-top: 1px solid rgba(16, 40, 31, 0.13);
 }
@@ -254,13 +254,13 @@
    ═══════════════════════════════════════════════════════════════════ */
 
 .team-card__block--studie {
-  margin-top: 6px;
-  min-height: 104px;
+  margin-top: 0;
+  min-height: 84px;
 }
 
 .team-card__study {
   height: auto;
-  min-height: 72px;
+  min-height: 54px;
   margin: 0;
 
   font-family: var(--font-mono);
@@ -277,13 +277,13 @@
    ═══════════════════════════════════════════════════════════════════ */
 
 .team-card__block--fritid {
-  margin-top: 10px;
-  min-height: 64px;
+  margin-top: 8px;
+  min-height: 52px;
 }
 
 .team-card__interests {
   height: auto;
-  min-height: 32px;
+  min-height: 28px;
   margin: 0;
 
   font-family: var(--font-body);

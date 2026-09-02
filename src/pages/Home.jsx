@@ -17,6 +17,7 @@ export default function Home() {
   const ctaRef    = useRef(null)
 
   const aboutRef  = useReveal({ delay: 0.1 })
+  const projectRef = useReveal({ delay: 0.1 })
   const linksRef  = useReveal({ delay: 0.15 })
 
   useEffect(() => {
@@ -65,7 +66,7 @@ export default function Home() {
               skal vi inngå en samarbeidsavtale med en bedrift eller organisasjon.
             </p>
           </div>
-          <div className="container project-stack" ref={aboutRef}>
+          <div className="container project-stack" ref={projectRef}>
             <div className="project-copy">
               <p className="section-tag mono">Om prosjektet</p>
               <h2 className="section-title">Luftfartshindre</h2>
@@ -85,7 +86,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="project-media" aria-label="Bildeplasser for prosjektet">
+            <div className="project-media">
               <img src={helibilde} alt="Bilde av helikopter" />
             </div>
           </div>

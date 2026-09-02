@@ -16,7 +16,7 @@ export const teamMembers = [
   {
     id: 2,
     name: 'Tobias Olsen Nodland',
-    roles: ['Backend', 'Systemarkitektur', 'API'],
+    roles: ['Backend', 'Systemarkitekt', 'UX'],
     subtitle: 'Ingeniørforkurs, UiA\nMaster i økonomi og administrasjon, UiA / 1. år\nIT og informasjonssystemer, UiA / 5. semester',
     age: 23,
     hometown: 'Tvedestrand',

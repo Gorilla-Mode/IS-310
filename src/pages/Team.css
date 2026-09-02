@@ -22,6 +22,12 @@
   cursor: pointer;
 }
 
+.team-card-wrapper:focus-visible {
+  outline: 2px solid var(--accent-text);
+  outline-offset: 3px;
+  border-radius: var(--radius-img);
+}
+
 /* ═══ Responsivt ══════════════════════════════════════════════════
    ≥1100px  fem på rad
    640–1099 tre på rad, siste rad venstrejustert i samme kolonnebredde

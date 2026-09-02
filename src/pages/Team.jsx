@@ -10,6 +10,14 @@ export default function Team() {
     const headRef = useReveal()
     const gridRef = useReveal({ delay: 0.1 })
 
+    const openMember = id => navigate(`/team/${id}`)
+
+    const handleCardKeyDown = (event, id) => {
+        if (event.target !== event.currentTarget || event.key !== 'Enter') return
+        event.preventDefault()
+        openMember(id)
+    }
+
     return (
         <div className="page">
             <div className="team-page">
@@ -21,7 +29,11 @@ export default function Team() {
                         <div
                             key={m.id}
                             className="team-card-wrapper"
-                            onClick={() => navigate(`/team/${m.id}`)}
+                            role="link"
+                            tabIndex={0}
+                            aria-label={`Se profilen til ${m.name}`}
+                            onClick={() => openMember(m.id)}
+                            onKeyDown={event => handleCardKeyDown(event, m.id)}
                         >
                             <TeamCard member={m} />
                         </div>

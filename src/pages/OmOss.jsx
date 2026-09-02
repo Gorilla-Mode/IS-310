@@ -14,7 +14,6 @@ export default function OmOss() {
       <div className="container">
 
         <div className="page__header" ref={headRef}>
-          <p className="page__tag mono">Om oss</p>
           <h1 className="page__title">Hvem er vi?</h1>
         </div>
 
@@ -43,12 +42,14 @@ export default function OmOss() {
           </video>
         </div>
 
-        <Projects
-          projects={projects}
-          title="Tidligere prosjekter"
-          subtitle="Et utvalg av prosjekter vi har jobbet med tidligere i studiet."
-          delay={0.2}
-        />
+        <div className="om-oss-projects">
+          <Projects
+            projects={projects}
+            title="Tidligere prosjekter"
+            subtitle="Et utvalg av prosjekter vi har jobbet med tidligere i studiet."
+            delay={0.2}
+          />
+        </div>
 
       </div>
     </div>

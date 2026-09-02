@@ -10,8 +10,6 @@ export const LEAD = {
     role: 'Gruppeleder / kontaktperson',
     email: LEAD_EMAIL,
     mailto: buildMailto(LEAD_EMAIL),
-    portrait: `${import.meta.env.BASE_URL}images/iver.jpg`,
-    linkedin: '<TODO>',
 }
 
 export const TEAM_EMAILS = [

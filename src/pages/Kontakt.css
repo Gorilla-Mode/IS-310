@@ -170,7 +170,7 @@
     overflow-wrap: anywhere;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1199px) {
     .kontakt__content {
         grid-template-columns: 1fr;
         gap: 64px;
@@ -185,7 +185,7 @@
     }
 
     .kontakt__intro-text h1 {
-        font-size: clamp(46px, 11vw, 60px);
+        font-size: clamp(40px, 9vw, 52px);
     }
 
     .kontakt__intro-text {
@@ -229,7 +229,7 @@
     }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1200px) {
     .kontakt__intro-text h1 {
         white-space: nowrap;
     }

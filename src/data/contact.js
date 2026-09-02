@@ -7,7 +7,7 @@ const buildMailto = (email) =>
 
 export const LEAD = {
     name: 'Iver Kroken',
-    role: 'Gruppeleder og kontaktperson',
+    role: 'Gruppeleder / kontaktperson',
     email: LEAD_EMAIL,
     mailto: buildMailto(LEAD_EMAIL),
     portrait: `${import.meta.env.BASE_URL}images/iver.jpg`,

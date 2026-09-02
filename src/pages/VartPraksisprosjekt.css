@@ -214,7 +214,13 @@
   color: var(--kartverket-green-dark);
 }
 
+.kartverket-page__image {
+  border-radius: var(--radius-img);
+  overflow: hidden;
+}
+
 .kartverket-page__cta-box {
+  margin-top: 48px;
   background: var(--kartverket-blue);
   color: #fff;
   border-radius: 18px;

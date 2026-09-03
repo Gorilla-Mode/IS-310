@@ -1,0 +1,127 @@
+﻿.samarbeid {
+    padding: var(--section-y) 0;
+    background: var(--ink);
+    color: var(--off-white);
+    border-top: var(--hairline-ink);
+}
+
+.samarbeid__inner {
+    width: 100%;
+}
+
+.samarbeid__header {
+    align-items: start;
+}
+
+.samarbeid__eyebrow {
+    grid-column: 1 / span 2;
+    color: var(--teal-light);
+}
+
+.samarbeid__intro {
+    grid-column: 3 / span 7;
+}
+
+.samarbeid__title {
+    color: var(--off-white);
+    max-width: 15ch;
+}
+
+.samarbeid__body {
+    max-width: 58ch;
+    margin-top: 24px;
+    color: var(--on-ink-body);
+}
+
+.samarbeid__action {
+    grid-column: 11 / span 2;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.samarbeid__action .btn {
+    white-space: nowrap;
+}
+
+.samarbeid__columns {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--grid-gap);
+    margin: 72px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.samarbeid__column {
+    padding-top: 24px;
+    border-top: var(--hairline-ink);
+}
+
+.samarbeid__number {
+    margin-bottom: 32px;
+    color: var(--teal-light);
+}
+
+.samarbeid__column-title {
+    color: var(--off-white);
+}
+
+.samarbeid__column-text {
+    max-width: 34ch;
+    margin-top: 16px;
+    color: var(--on-ink-body);
+}
+
+@media (max-width: 900px) {
+    .samarbeid__eyebrow {
+        grid-column: 1 / span 3;
+    }
+
+    .samarbeid__intro {
+        grid-column: 4 / span 9;
+    }
+
+    .samarbeid__action {
+        grid-column: 4 / span 9;
+        justify-content: flex-start;
+        margin-top: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .samarbeid__eyebrow,
+    .samarbeid__intro,
+    .samarbeid__action {
+        grid-column: 1 / -1;
+    }
+
+    .samarbeid__intro {
+        margin-top: 32px;
+    }
+
+    .samarbeid__title {
+        max-width: none;
+    }
+
+    .samarbeid__action {
+        margin-top: 32px;
+    }
+
+    .samarbeid__action .btn {
+        width: 100%;
+    }
+
+    .samarbeid__columns {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin-top: 56px;
+    }
+
+    .samarbeid__number {
+        margin-bottom: 20px;
+    }
+
+    .samarbeid__column-text {
+        max-width: 58ch;
+    }
+}

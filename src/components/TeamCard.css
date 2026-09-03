@@ -1,179 +1,420 @@
-/* ── Card ────────────────────────────────────────────────────────── */
+/* ═══════════════════════════════════════════════════════════════════
+   TEAM CARD
+
+   Struktur:
+   portrett
+   navn
+   alder og hjemsted
+   beskrivelse
+   ansvar
+   skillelinje
+   studie
+   fritid
+   sosiale lenker
+   ═══════════════════════════════════════════════════════════════════ */
+
 .team-card {
-  background: var(--ink-dark);
-  border: 1px solid rgb(from var(--snow) r g b / 0.06);
-  border-radius: 16px;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
-  min-width: 0;
   width: 100%;
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  height: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+
+  background: var(--eggshell-2);
+
+  /* Tydeligere ytterkant enn var(--hairline).
+     Kortet skal leses som én samlet komponent. */
+  border: 1px solid rgba(16, 40, 31, 0.18);
+  border-radius: var(--radius-img);
+
+  overflow: hidden;
+
+  transition:
+          transform 220ms ease,
+          border-color 220ms ease;
 }
 
-.team-card:hover {
-  transform: translateY(-4px);
-  border-color: rgb(from var(--signal) r g b / 0.2);
+.team-card-wrapper:hover .team-card {
+  transform: translateY(-2px);
+  border-color: var(--accent);
 }
 
-/* ── Image ───────────────────────────────────────────────────────── */
+
+/* ═══════════════════════════════════════════════════════════════════
+   PORTRETT
+
+   Bildet skal igjen være stort og ha tydelig visuell vekt.
+   1 / 1 gir omtrent samme store portrettflate som i den tidligere
+   versjonen du viste.
+   ═══════════════════════════════════════════════════════════════════ */
+
 .team-card__img-wrap {
+  width: 100%;
   aspect-ratio: 1 / 1;
   overflow: hidden;
-  background: var(--fog);
   flex-shrink: 0;
+  background: var(--eggshell);
 }
 
 .team-card__img {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
-  transition: transform 0.5s ease;
+
+  transition: transform 400ms ease;
 }
 
-.team-card:hover .team-card__img {
-  transform: scale(1.04);
+.team-card-wrapper:hover .team-card__img {
+  transform: scale(1.03);
 }
 
 .team-card__img-placeholder {
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, var(--fog) 0%, var(--mist) 100%);
+  background: var(--eggshell);
 }
 
-/* ── Body ────────────────────────────────────────────────────────── */
+
+/* ═══════════════════════════════════════════════════════════════════
+   KORTINNHOLD
+   ═══════════════════════════════════════════════════════════════════ */
+
 .team-card__body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 18px 16px 20px;
-  gap: 16px;
+  justify-content: flex-start;
+
+  padding: 16px;
 }
 
-.team-card__content {
-  flex: 1;
+.team-card__intro {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  justify-content: flex-start;
+  min-height: 146px;
 }
 
-.team-card__links {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
 
-/* ── Text ────────────────────────────────────────────────────────── */
+/* ═══ Navn ═══════════════════════════════════════════════════════ */
+
 .team-card__name {
-  font-family: var(--font-heading), sans-serif;
-  font-size: clamp(0.9rem, 1.1vw, 1.1rem);
-  font-weight: 700;
-  color: var(--snow);
   margin: 0;
-  line-height: 1.25;
+
+  font-family: var(--font-display);
+  font-variation-settings: 'wdth' 110;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+
+  color: var(--ink);
 }
 
-.team-card__subtitle.mono {
-  font-size: 0.8rem;
-  color: var(--accent);
-  letter-spacing: 0.03em;
-  margin: 0;
-  line-height: 1.6;
-  white-space: pre-line;
-  word-break: keep-all;
-  min-height: 56px;
+
+/* ═══ Alder og hjemsted ══════════════════════════════════════════ */
+
+.team-card__origin {
+  margin: 6px 0 0;
+
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.5;
+
+  color: var(--ink-muted);
 }
 
-.team-card__age {
-  font-size: 0.85rem;
-  color: var(--silver);
-  margin: 0;
+
+/* ═══ Kort beskrivelse ═══════════════════════════════════════════
+
+   Original bio beholdes i dataene.
+   Kun den synlige teksten begrenses.
+   ═══════════════════════════════════════════════════════════════════ */
+
+.team-card__desc {
+  height: 63px;
+  margin: 14px 0 0;
+
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.5;
+
+  color: var(--ink-muted);
+
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
 }
 
-.team-card__bio {
-  font-size: 0.85rem;
-  color: var(--silver);
-  line-height: 1.3;
-  margin: 0;
-  margin-top: 4px;
-}
 
-/* ── Interests ───────────────────────────────────────────────────── */
-.interests-list {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-top: auto;
-}
+/* ═══════════════════════════════════════════════════════════════════
+   FELLES BLOKKER
+   ═══════════════════════════════════════════════════════════════════ */
 
-.interests-list__label {
-  font-size: 0.65rem;
-  color: var(--accent);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  margin: 0;
-}
-
-.interests-list__items {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.team-card__block {
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
 
-.interests-list__item {
-  font-size: 0.72rem;
-  color: var(--light);
-  background: var(--fog);
-  border: 1px solid rgb(from var(--snow) r g b / 0.08);
-  padding: 6px 12px;
-  border-radius: 6px;
-  letter-spacing: 0.03em;
-  line-height: 1.3;
+.team-card__label {
+  margin: 0;
+
+  font-family: var(--font-mono);
+  font-size: 10px;
+  line-height: 1.4;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+
+  color: var(--ink-muted);
 }
 
-/* ── Links ───────────────────────────────────────────────────────── */
-.team-card__links {
+
+/* ═══════════════════════════════════════════════════════════════════
+   ANSVAR
+
+   Viktig endring:
+   Den gamle versjonen reserverte 66px til taggene.
+   Det skapte det store tomrommet før skillelinjen.
+
+   På desktop får alle tre roller plass på én rad, derfor bruker vi
+   kun høyden som faktisk trengs.
+   ═══════════════════════════════════════════════════════════════════ */
+
+.team-card__block--ansvar {
+  margin-top: 12px;
+  margin-bottom: 8px;
+  min-height: 92px;
+}
+
+.team-card__tags {
+  height: auto;
+  min-height: 66px;
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
   display: flex;
-  flex-direction: column;
-  gap: 8px;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 6px;
 }
 
-.team-card__link {
+
+/* ═══ Ansvarstag ═════════════════════════════════════════════════ */
+
+.team-card__tag {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 7px;
-  font-size: 0.82rem;
+
+  min-height: 30px;
+  padding: 0 10px;
+
+  border: 1px solid rgba(16, 40, 31, 0.14);
+  border-radius: 6px;
+
+  background: rgba(16, 40, 31, 0.025);
+
+  font-family: var(--font-body);
+  font-size: 12px;
+  line-height: 1.2;
+
+  color: var(--ink);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   SKILLELINJE
+
+   Nå ligger den mye nærmere ANSVAR.
+   ═══════════════════════════════════════════════════════════════════ */
+
+.team-card__divider {
+  height: 0;
+
+  margin: 6px 0 8px;
+
+  border-top: 1px solid rgba(16, 40, 31, 0.13);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   STUDIE
+
+   Hele studieinformasjonen skal vises.
+   Ingen line clamp og ingen ellipse.
+   ═══════════════════════════════════════════════════════════════════ */
+
+.team-card__block--studie {
+  margin-top: 0;
+  min-height: 84px;
+}
+
+.team-card__study {
+  height: auto;
+  min-height: 54px;
+  margin: 0;
+
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.4;
+  letter-spacing: 0.06em;
+
+  color: var(--accent-text);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   FRITID
+   ═══════════════════════════════════════════════════════════════════ */
+
+.team-card__block--fritid {
+  margin-top: 8px;
+  min-height: 52px;
+}
+
+.team-card__interests {
+  height: auto;
+  min-height: 28px;
+  margin: 0;
+
+  font-family: var(--font-body);
+  font-size: 12px;
+  line-height: 1.4;
+
+  color: var(--ink-muted);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   LINKEDIN OG GITHUB
+
+   Begge ligger nederst på samme høyde.
+   ═══════════════════════════════════════════════════════════════════ */
+
+.team-card__links {
+  display: flex;
+  gap: 8px;
+
+  margin-top: auto;
+  padding-top: 12px;
+}
+
+.team-card__link {
+  flex: 1 1 0;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  min-width: 0;
+  min-height: 34px;
+  padding: 0 8px;
+
+  border: 1px solid rgba(16, 40, 31, 0.16);
+  border-radius: 6px;
+
+  background: transparent;
+
+  font-family: var(--font-body);
+  font-size: 12px;
   font-weight: 500;
-  color: var(--light);
-  padding: 8px 14px;
-  border-radius: 7px;
+  line-height: 1;
+
+  color: var(--ink);
   text-decoration: none;
-  transition: background 0.2s, border-color 0.2s;
-  width: 100%;
-  box-sizing: border-box;
+
+  transition:
+          color 180ms ease,
+          border-color 180ms ease,
+          background-color 180ms ease;
 }
 
-.team-card__link--linkedin {
-  background: rgb(from var(--linkedin) r g b / 0.12);
-  border: 1px solid rgb(from var(--linkedin) r g b / 0.3);
+.team-card__link:hover {
+  color: var(--accent-text);
+  border-color: var(--accent-text);
+  background-color: rgba(168, 55, 34, 0.06);
 }
 
-.team-card__link--linkedin:hover {
-  background: rgb(from var(--linkedin) r g b / 0.28);
-  border-color: rgb(from var(--linkedin) r g b / 0.6);
+.team-card__link:focus-visible {
+  outline: 2px solid var(--accent-text);
+  outline-offset: 2px;
 }
 
-.team-card__link--github {
-  background: rgb(from var(--snow) r g b / 0.06);
-  border: 1px solid rgb(from var(--snow) r g b / 0.14);
+.team-card__link svg {
+  flex-shrink: 0;
 }
 
-.team-card__link--github:hover {
-  background: rgb(from var(--snow) r g b / 0.14);
-  border-color: rgb(from var(--snow) r g b / 0.28);
+
+/* ═══════════════════════════════════════════════════════════════════
+   RESPONSIVT
+   ═══════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 1099px) {
+
+  .team-card__desc {
+    height: 63px;
+  }
+
+  /* På smalere kort kan rollene gå over flere rader. */
+  .team-card__tags {
+    height: auto;
+    min-height: 66px;
+  }
+
+  .team-card__study {
+    height: auto;
+    min-height: 84px;
+  }
+
+  .team-card__interests {
+    height: auto;
+    min-height: 34px;
+  }
+}
+
+
+@media (max-width: 639px) {
+
+  .team-card__body {
+    padding: 14px;
+  }
+
+  .team-card__name {
+    font-size: 16px;
+  }
+
+  .team-card__origin,
+  .team-card__desc {
+    font-size: 13px;
+  }
+
+  .team-card__study {
+    font-size: 11px;
+  }
+
+  .team-card__tag {
+    min-height: 28px;
+    padding: 0 8px;
+    font-size: 11px;
+  }
+
+  .team-card__tags {
+    min-height: 62px;
+  }
+
+  .team-card__links {
+    flex-direction: column;
+  }
+
+  .team-card__link {
+    width: 100%;
+  }
 }

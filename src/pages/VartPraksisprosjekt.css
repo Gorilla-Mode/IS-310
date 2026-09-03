@@ -12,7 +12,7 @@
 }
 
 .kartverket-page {
-  background: var(--ink);
+  background: var(--paper);
   color: var(--kartverket-text);
   font-family: var(--font-body), monospace;
   min-height: 100vh;
@@ -133,7 +133,7 @@
   border: 2px solid var(--kartverket-green);
   border-radius: 12px;
   padding: 20px;
-  background: #ffffff;
+  background: var(--eggshell-2);
   margin-bottom: 28px;
 }
 
@@ -165,7 +165,7 @@
 
 .kartverket-page__info-card {
   position: relative;
-  background: var(--kartverket-white);
+  background: var(--eggshell-2);
   border: 1px solid var(--kartverket-line);
   border-left: 4px solid var(--kartverket-blue);
   border-radius: 14px;
@@ -214,7 +214,13 @@
   color: var(--kartverket-green-dark);
 }
 
+.kartverket-page__image {
+  border-radius: var(--radius-img);
+  overflow: hidden;
+}
+
 .kartverket-page__cta-box {
+  margin-top: 48px;
   background: var(--kartverket-blue);
   color: #fff;
   border-radius: 18px;

@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import Samarbeid from '../components/Samarbeid'
 import { useReveal } from '../hooks/useReveal'
 import './Home.css'
 import helibilde from '../assets/heli1.jpg'
@@ -16,6 +17,7 @@ export default function Home() {
   const ctaRef    = useRef(null)
 
   const aboutRef  = useReveal({ delay: 0.1 })
+  const projectRef = useReveal({ delay: 0.1 })
   const linksRef  = useReveal({ delay: 0.15 })
 
   useEffect(() => {
@@ -44,11 +46,13 @@ export default function Home() {
                 En engasjert gruppe IT-studenter ved UiA som er klare for et spennende bachelorprosjekt!
               </p>
               <div className="hero__cta" ref={ctaRef}>
-                <Link to="/om-oss" className="btn btn--primary">Introduksjonsvideo</Link>
-                <Link to="/team"   className="btn btn--ghost">Møt teamet</Link>
+                <Link to="/om-oss" className="btn btn--secondary">Introduksjonsvideo</Link>
+                <Link to="/team" className="link-arrow hero__link">
+                  <span>Møt teamet</span>
+                  <span className="arrow" aria-hidden="true">→</span>
+                </Link>
               </div>
             </div>
-
           </div>
           <div className="hero__line" aria-hidden="true" />
         </section>
@@ -62,24 +66,27 @@ export default function Home() {
               skal vi inngå en samarbeidsavtale med en bedrift eller organisasjon.
             </p>
           </div>
-          <div className="container project-stack" ref={aboutRef}>
+          <div className="container project-stack" ref={projectRef}>
             <div className="project-copy">
               <p className="section-tag mono">Om prosjektet</p>
-              <h2 className="section-title">Luftfartshindre</h2>
+              <h2 className="section-title">NRL Prosjekt</h2>
               <p className="section-body">
-                I sammarbeid med Kartverket og Norsk Luftambulanse utvikler vi et system som gjør det enklere for piloter og flybesetning å melde inn luftfartshindre, som kraftlinjer, master og stolper, direkte i kart, under flygning.
+                I samarbeid med Kartverket og Norsk Luftambulanse utvikler vi et system som gjør det enklere for piloter og flybesetning å melde inn luftfartshindre, som kraftlinjer, master og stolper, direkte i kart, under flygning.
               </p>
               <p className="section-body">
-                Gjennom oppgaven får vi erfaring med forskning, samarbeidsarbeid og prototyping i praksis –
-                samtidig som vi utforsker hvordan data kan gjøres mer tilgjengelig, forståelig og nyttig for
+                Gjennom oppgaven får vi erfaring med forskning, samarbeidsarbeid og prototyping i praksis.
+                Samtidig utforsker vi hvordan data kan gjøres mer tilgjengelig, forståelig og nyttig for
                 mennesker i hverdagen.
               </p>
               <div className="project-actions">
-                <Link to="/vart-praksisprosjekt" className="btn btn--primary">Se praksisprosjektet</Link>
+                <Link to="/vart-praksisprosjekt" className="link-arrow">
+                  <span>Se praksisprosjektet</span>
+                  <span className="arrow" aria-hidden="true">→</span>
+                </Link>
               </div>
             </div>
 
-            <div className="project-media" aria-label="Bildeplasser for prosjektet">
+            <div className="project-media">
               <img src={helibilde} alt="Bilde av helikopter" />
             </div>
           </div>
@@ -94,12 +101,14 @@ export default function Home() {
             ].map(({ to, label, desc }) => (
                 <Link key={to} to={to} className="home-link-card">
                   <p className="home-link-card__label">{label}</p>
-                  <p className="home-link-card__desc mono">{desc}</p>
+                  <p className="home-link-card__desc">{desc}</p>
                   <span className="home-link-card__arrow">→</span>
                 </Link>
             ))}
           </div>
         </section>
+
+        <Samarbeid />
       </>
   )
 }

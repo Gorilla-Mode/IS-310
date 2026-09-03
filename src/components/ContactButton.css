@@ -1,0 +1,84 @@
+﻿/* ─── Primærknapp — den eneste fylte aksentflaten ────────────────── */
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1;
+    padding: 14px 24px;
+    min-height: 44px;
+    border-radius: var(--radius);
+    background: var(--accent-surface);
+    color: var(--off-white);
+    text-decoration: none;
+    transition: background-color 160ms var(--ease), transform 160ms var(--ease);
+}
+
+.btn-primary:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+.btn-primary:focus-visible {
+    outline: 2px solid var(--accent-text);
+    outline-offset: 2px;
+}
+
+/* På ink-bakgrunn er aksentfarget fokusring for svak — bruk off-white. */
+.on-ink .btn-primary:focus-visible {
+    outline-color: var(--off-white);
+}
+
+/* Nav-varianten: samme knapp, strammere polstring. */
+.btn-primary--nav {
+    padding: 11px 20px;
+}
+
+/* ─── Sekundærhandling — tekstlenke med pil, aldri en knapp ──────── */
+.link-arrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 16px;
+    color: var(--ink);
+    padding-bottom: 4px;
+    border-bottom: 1px solid rgba(16, 40, 31, 0.2);
+    text-decoration: none;
+    transition: color 160ms var(--ease), gap 160ms var(--ease);
+}
+
+.link-arrow:hover {
+    color: var(--accent-text);
+    border-bottom: 1.5px solid var(--accent-text);
+    gap: 12px;
+}
+
+.link-arrow .arrow {
+    transition: transform var(--t-underline) var(--ease);
+}
+
+.link-arrow:hover .arrow {
+    transform: translateX(6px);
+}
+
+.link-arrow:focus-visible {
+    outline: 2px solid var(--accent-text);
+    outline-offset: 2px;
+}
+
+.on-ink .link-arrow {
+    color: var(--off-white);
+    border-bottom-color: rgba(251, 247, 240, 0.35);
+}
+
+.on-ink .link-arrow:hover {
+    color: var(--off-white);
+    border-bottom-color: var(--off-white);
+}
+
+.on-ink .link-arrow:focus-visible {
+    outline-color: var(--off-white);
+}

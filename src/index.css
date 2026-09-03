@@ -1,33 +1,66 @@
-/* ─── Design tokens ──────────────────────────────────────────────── */
+/* ═══════════════════════════════════════════════════════════════════
+   Designtokens. Eneste stedet i prosjektet hvor en hex-verdi for
+   grensesnittpaletten skal stå. Eksterne teknologilogoer i
+   Projects.jsx er unntatt, se akseptansekriterium 9.
+   ═══════════════════════════════════════════════════════════════════ */
 :root {
-  --ink: #F8EDDD;
-  --ink-dark: #efe4d4;
-  --stone: #f0eee9;
-  --ash: #FEE7E8;
-  --fog: #ddd3c9;
-  --mist: #b9b0a8;
-  --silver: #5d6067;
-  --light: #1b1c1f;
-  --snow: #121417;
-  --accent: #c6102e;
-  --glow: #b20f2d;
-  --warm: #ff6b35;
-  --void: #FEE7E8;
-  --signal: #d91231;
-  --signal-strong: #c6102e;
-  --linkedin: #0a66c2;
-  --dark: #131E29;
+  /* ── Flater ───────────────────────────────────────────────────── */
+  --eggshell:      #F4EDE1;   /* sidebakgrunn, body */
+  --eggshell-2:    #EBE2D3;   /* kortflate på lys bakgrunn */
+  --off-white:     #FBF7F0;   /* tekst på ink, logo på ink */
+  --ink:           #10281F;   /* tekst på lys flate, bakgrunn i mørke seksjoner */
+  --ink-deep:      #0A1C15;   /* kortflate inne i en ink-seksjon */
+  --ink-muted:     #3E5349;   /* brødtekst, dempet metadata */
 
-  --font-heading: 'acumin-pro', sans-serif;
-  --font-display: 'acumin-pro', sans-serif;
-  --font-body:    'JetBrains Mono', ui-monospace, monospace;
-  --font-mono:    'JetBrains Mono', ui-monospace, monospace;
-  --font-logo:    "Rubik Broken Fax", sans-serif;
+  /* ── Aksent ───────────────────────────────────────────────────── */
+  --accent:        #C0402C;   /* knappefyll, 2px aksentstrek. ALDRI tekstfarge. */
+  --accent-hover:  #9C3121;   /* knapp hover */
+  --accent-text:   #A83722;   /* aksentfarget tekst på lys flate */
+  --accent-tint:   #F5DDD5;   /* advarsels- og markeringsflate */
+  --hero-accent:   #ff7b8c;
 
-  --nav-h: 72px;
+  /* ── Teal. Kun tags og labels. Aldri brødtekst eller overskrift. ─ */
+  --teal:          #25705C;   /* på lys flate */
+  --teal-light:    #5FBFA3;   /* på ink-flate */
+
+  /* ── Avledede verdier ─────────────────────────────────────────────
+     Merk: --hairline, --hairline-ink og --rule er KOMPLETTE
+     border-shorthand-verdier. Bruk dem som `border: var(--hairline)`,
+     ikke som `border: 0.5px solid var(--hairline)`.               */
+  --hairline:      0.5px solid rgba(16, 40, 31, 0.12);
+  --hairline-ink:  0.5px solid rgba(251, 247, 240, 0.14);
+  --rule:          1px solid rgba(16, 40, 31, 0.16);
+  --on-ink-body:   rgba(251, 247, 240, 0.86);
+  --on-ink-muted:  rgba(251, 247, 240, 0.6);
+  --scrim-ink:     linear-gradient(to top, rgba(16, 40, 31, .75), transparent 60%);
+
+  /* ── Radius og form ───────────────────────────────────────────── */
+  --radius-img:    16px;      /* portretter, kort, vanlige bilder */
+  --radius-img-lg: 24px;      /* helikopterbildet, videoen, kontaktkortet */
+  --radius-ui:     12px;      /* knapper, inputfelt */
+  --radius-pill:   999px;     /* tags og interesse-pills */
+
+  /* ── Layout ───────────────────────────────────────────────────── */
+  --nav-h:         88px;
+  --container-max: 1200px;
+  --gutter:        80px;      /* sidemargin, 20px under 768px */
+  --grid-gap:      24px;      /* 12-kolonners grid */
+  --section-y:     140px;     /* seksjonsavstand, 72px under 768px */
+
+  /* ── Typografi ────────────────────────────────────────────────── */
+  --font-display:  'Archivo', sans-serif;      /* h1, h2, h3 og logo. Ingenting annet. */
+  --font-body:     'Inter Tight', sans-serif;  /* brødtekst, knapper, navigasjon, lenker */
+  --font-mono:     'JetBrains Mono', ui-monospace, monospace; /* labels, metadata, e-post, tags */
 }
 
-/* ─── Reset ──────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  :root {
+    --gutter:    20px;
+    --section-y: 72px;
+  }
+}
+
+/* ═══ Reset ═══════════════════════════════════════════════════════ */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -39,9 +72,9 @@ html::-webkit-scrollbar {
 }
 
 body {
-  background: var(--ink);
-  color: var(--light);
-  font-family: var(--font-body), monospace;
+  background: var(--eggshell);
+  color: var(--ink-muted);
+  font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.6;
   font-weight: 400;
@@ -60,18 +93,9 @@ main {
   flex: 1;
 }
 
-/* ─── Typography ─────────────────────────────────────────────────── */
-h1, h2, h3, h4 {
-  font-family: var(--font-heading), sans-serif;
-  font-weight: 800;
-  color: var(--snow);
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-}
-
-p {
-  color: var(--silver);
-  line-height: 1.7;
+img {
+  display: block;
+  max-width: 100%;
 }
 
 a {
@@ -79,37 +103,237 @@ a {
   text-decoration: none;
 }
 
-img {
-  display: block;
-  max-width: 100%;
+/* ═══ Typografi ═══════════════════════════════════════════════════ */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-variation-settings: 'wdth' 110;
+  color: var(--ink);
 }
 
-/* ─── Utility ────────────────────────────────────────────────────── */
-.accent { color: var(--accent); }
-.mono   { font-family: var(--font-mono), monospace; font-size: 0.8em; }
+h1 {
+  font-weight: 700;
+  font-size: 88px;
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+}
 
+h2 {
+  font-weight: 600;
+  font-size: 52px;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+h3 {
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 1.2;
+}
+
+/* h4 står ikke i skalaen i punkt 2. Familie og vekt følger h3,
+   størrelsen settes av komponenten som bruker den. */
+h4 {
+  font-weight: 600;
+}
+
+p {
+  color: var(--ink-muted);
+  line-height: 1.6;
+  text-wrap: pretty;
+}
+
+li {
+  text-wrap: pretty;
+}
+
+/* Ingress */
+.ingress {
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--ink-muted);
+  text-wrap: pretty;
+}
+
+/* Liten brødtekst */
+.text-sm {
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.6;
+  text-wrap: pretty;
+}
+
+/* Mono, familie alene. Størrelsen settes av .label-mono, .meta-mono
+   eller av komponenten. */
+.mono {
+  font-family: var(--font-mono);
+}
+
+/* Eyebrow-label */
+.label-mono {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+/* Metadata, datoer, e-post */
+.meta-mono {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  h1 { font-size: 40px; line-height: 1.0; }
+  h2 { font-size: 32px; line-height: 1.08; }
+  h3 { font-size: 22px; }
+  .ingress { font-size: 16px; line-height: 1.6; }
+  .label-mono { font-size: 11px; }
+  .meta-mono  { font-size: 11px; letter-spacing: 0.08em; }
+}
+
+@media (max-width: 420px) {
+  h1 { font-size: 36px; }
+}
+
+/* ═══ MUTEX-logo. Delt av navbar og footer. ═══════════════════════ */
+.mutex-logo {
+  font-family: var(--font-display);
+  font-variation-settings: 'wdth' 110;
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+/* ═══ Knapper ═════════════════════════════════════════════════════
+   Tre nivåer, se punkt 6. Kontaktpunktet i navbaren er ikke et av
+   dem og har sin egen klasse i Navbar.css.
+
+   Variantene er skrevet som .btn.btn--primary og .btn.btn--secondary
+   for å vinne over den gamle .btn-blokken i Home.css, som lastes
+   etter denne filen. Doblingen fjernes i fase C når den blokken
+   slettes.                                                        */
+.btn.btn--primary,
+.btn.btn--secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  box-sizing: border-box;
+  border-radius: var(--radius-ui);
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease;
+}
+
+.btn.btn--primary {
+  padding: 14px 24px;
+  background: var(--accent);
+  color: var(--off-white);
+  border: none;
+}
+
+.btn.btn--primary:hover {
+  background: var(--accent-hover);
+}
+
+/* 1px mindre polstring enn primær, fordi kanten legger 1px på hver
+   side. Da får de to samme ytre høyde når de står side om side. */
+.btn.btn--secondary {
+  padding: 13px 23px;
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid rgba(16, 40, 31, 0.28);
+}
+
+.btn.btn--secondary:hover {
+  border-color: var(--ink);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--accent-text);
+  outline-offset: 2px;
+}
+
+/* Tredje nivå: tekstlenke med pil. */
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.link-arrow .arrow {
+  transition: transform 180ms ease;
+}
+
+.link-arrow:hover .arrow {
+  transform: translateX(6px);
+}
+
+.link-arrow:focus-visible {
+  outline: 2px solid var(--accent-text);
+  outline-offset: 2px;
+}
+
+/* ═══ Layout ══════════════════════════════════════════════════════ */
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: var(--container-max);
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 var(--gutter);
 }
 
 .container--wide {
   width: 100%;
-  max-width: 100%;
+  max-width: none;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 var(--gutter);
 }
 
-@media (max-width: 768px) {
-  .container,
-  .container--wide {
-    padding: 0 20px;
-  }
+/* 12-kolonners grid. Seksjonene i punkt 4 og 7 viser til
+   kolonneposisjoner i denne. */
+.grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--grid-gap);
 }
 
-/* ─── Noise overlay (atmospheric texture) ───────────────────────── */
+.section {
+  padding: var(--section-y) 0;
+}
+
+/* ═══ Utility ═════════════════════════════════════════════════════ */
+.accent { color: var(--accent-text); }
+
+/* Synlig for skjermlesere, skjult visuelt. Brukes til aria-live-
+   statusen på kontaktsiden. */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ═══ Noise overlay, atmosfærisk tekstur ══════════════════════════ */
 body::after {
   content: '';
   position: fixed;
@@ -121,57 +345,10 @@ body::after {
   background-size: 200px 200px;
 }
 
-/* Page-specific styling for Kartverket practice page */
-.page--kartverket .navbar {
-  background: var(--kartverket-tint); /* light green, like the other page accent tint */
-  border-bottom-color: rgba(0, 176, 79, 0.12);
-  box-shadow: 0 1px 12px rgba(0, 176, 79, 0.06);
-}
-
-/* Make site title (Bachelorprosjekt) dark green for this page */
-.page--kartverket .navbar__logo-mark {
-  border-color: var(--kartverket-green-dark);
-  box-shadow: 0 0 10px rgba(0, 122, 56, 0.2);
-}
-
-.page--kartverket .navbar__logo-text {
-  color: var(--dark);
-}
-
-.page--kartverket .navbar__logo:hover .navbar__logo-mark {
-  border-color: var(--kartverket-green);
-  box-shadow: 0 0 16px rgba(0, 176, 79, 0.3);
-}
-
-/* Links and burger should be dark (same as other pages) */
-.page--kartverket .navbar__link,
-.page--kartverket .navbar__burger span {
-  color: var(--dark);
-}
-
-.page--kartverket .navbar__link:hover {
-  color: var(--kartverket-green-dark);
-  background: rgba(0, 176, 79, 0.06);
-}
-
-/* Active underline becomes Kartverket dark green */
-.page--kartverket .navbar__link--active::after {
-  background: var(--kartverket-green-dark);
-  box-shadow: 0 0 6px rgba(0,122,56,0.18);
-}
-
-.page--kartverket .navbar__burger span {
-  background: var(--dark);
-}
-
-.page--kartverket .footer {
-  background: var(--kartverket-tint);
-  color: var(--dark);
-  border-top-color: rgba(0, 176, 79, 0.12);
-}
-
-.page--kartverket .footer__logo-text,
-.page--kartverket .footer__nav a,
-.page--kartverket .footer__bottom p {
-  color: var(--dark);
+/* ═══ Redusert bevegelse ══════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
 }

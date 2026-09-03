@@ -6,30 +6,40 @@ import './Page.css'
 import './Team.css'
 
 export default function Team() {
-  const navigate = useNavigate()
-  const headRef = useReveal()
-  const gridRef = useReveal({ delay: 0.1 })
+    const navigate = useNavigate()
+    const headRef = useReveal()
+    const gridRef = useReveal({ delay: 0.1 })
 
-  return (
-    <div className="page">
-      <div className="container--wide">
-        <div className="page__header" ref={headRef}>
-          <p className="page__tag mono">Teamet</p>
-          <h1 className="page__title">Møt gruppen</h1>
-          <p className={"team-subtext mono"}>Klikk på oss for mer informasjon!</p>
-        </div>
-        <div className="team-grid" ref={gridRef}>
-          {teamMembers.map(m => (
-            <div
-              key={m.id}
-              className="team-card-wrapper"
-              onClick={() => navigate(`/team/${m.id}`)}
-            >
-              <TeamCard member={m} />
+    const openMember = id => navigate(`/team/${id}`)
+
+    const handleCardKeyDown = (event, id) => {
+        if (event.target !== event.currentTarget || event.key !== 'Enter') return
+        event.preventDefault()
+        openMember(id)
+    }
+
+    return (
+        <div className="page">
+            <div className="team-page">
+                <div className="page__header" ref={headRef}>
+                    <h1 className="page__title">Møt gruppen</h1>
+                </div>
+                <div className="team-grid" ref={gridRef}>
+                    {teamMembers.map(m => (
+                        <div
+                            key={m.id}
+                            className="team-card-wrapper"
+                            role="link"
+                            tabIndex={0}
+                            aria-label={`Se profilen til ${m.name}`}
+                            onClick={() => openMember(m.id)}
+                            onKeyDown={event => handleCardKeyDown(event, m.id)}
+                        >
+                            <TeamCard member={m} />
+                        </div>
+                    ))}
+                </div>
             </div>
-          ))}
         </div>
-      </div>
-    </div>
-  )
+    )
 }

@@ -1,0 +1,236 @@
+﻿.kontakt {
+    padding-top: var(--nav-h);
+}
+
+.kontakt__intro,
+.kontakt__content {
+    width: 100%;
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
+}
+
+.kontakt__intro {
+    padding-top: 56px;
+    padding-bottom: 48px;
+    align-items: start;
+}
+
+.kontakt__intro-text {
+    grid-column: 1 / -1;
+}
+
+.kontakt__intro-text h1 {
+    font-size: clamp(60px, 5.8vw, 72px);
+}
+
+.kontakt__ingress {
+    max-width: 64ch;
+    margin-top: 24px;
+}
+
+.kontakt__content {
+    display: grid;
+    grid-template-columns: minmax(0, 1.8fr) minmax(340px, 0.9fr);
+    gap: 40px;
+    align-items: start;
+    padding-bottom: 80px;
+}
+
+.kontakt__card {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(260px, 0.9fr);
+    gap: 32px;
+    align-items: center;
+    background: var(--eggshell-2);
+    border: var(--hairline);
+    border-radius: var(--radius-img-lg);
+    padding: 32px;
+}
+
+.kontakt__card-body {
+    min-width: 0;
+}
+
+.kontakt__group-visual {
+    margin: 0;
+}
+
+.kontakt__group-visual img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 6 / 5;
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+    border-radius: var(--radius-img);
+}
+
+.kontakt__group-caption {
+    color: var(--ink-muted);
+    margin-top: 12px;
+}
+
+.kontakt__name {
+    font-size: 44px;
+}
+
+.kontakt__role {
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-top: 8px;
+}
+
+.kontakt__email {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 22px;
+    line-height: 1.3;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    user-select: all;
+    margin-top: 16px;
+    overflow-wrap: anywhere;
+    transition: color 180ms ease, border-color 180ms ease;
+}
+
+.kontakt__email:hover {
+    color: var(--accent-text);
+    border-bottom-color: var(--accent-text);
+}
+
+.kontakt__email:focus-visible {
+    outline: 2px solid var(--accent-text);
+    outline-offset: 3px;
+}
+
+.kontakt__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.kontakt__copy-action.btn--secondary {
+    min-height: 44px;
+    padding: 10px 4px;
+    color: var(--ink-muted);
+    background: transparent;
+    border-color: transparent;
+}
+
+.kontakt__copy-action.btn--secondary:hover {
+    color: var(--accent-text);
+    background: transparent;
+    border-color: transparent;
+}
+
+.kontakt__group {
+    padding-top: 24px;
+    border-top: var(--hairline);
+}
+
+.kontakt__group-label {
+    color: var(--ink-muted);
+    margin-bottom: 16px;
+}
+
+.kontakt__group-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-top: var(--hairline);
+}
+
+.kontakt__group-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 24px;
+    padding: 9px 0;
+    border-bottom: var(--hairline);
+}
+
+.kontakt__group-name {
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--ink-muted);
+}
+
+.kontakt__group-email {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--ink-muted);
+    text-align: right;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 1199px) {
+    .kontakt__content {
+        grid-template-columns: 1fr;
+        gap: 64px;
+        padding-bottom: 64px;
+    }
+}
+
+@media (max-width: 768px) {
+    .kontakt__intro {
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+
+    .kontakt__intro-text h1 {
+        font-size: clamp(40px, 9vw, 52px);
+    }
+
+    .kontakt__intro-text {
+        grid-column: 1 / -1;
+    }
+
+    .kontakt__card {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 24px;
+    }
+
+    .kontakt__group {
+        padding-top: 24px;
+    }
+
+    .kontakt__name {
+        font-size: 32px;
+    }
+
+    .kontakt__email {
+        font-size: 22px;
+    }
+
+}
+
+@media (max-width: 600px) {
+    .kontakt__group-row {
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .kontakt__group-email {
+        text-align: left;
+    }
+}
+
+@media (max-width: 420px) {
+    .kontakt__email {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .kontakt__intro-text h1 {
+        white-space: nowrap;
+    }
+}

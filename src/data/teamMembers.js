@@ -30,7 +30,7 @@ export const teamMembers = [
   {
     id: 3,
     name: 'Sivert Svanes Sæstad',
-    roles: ['Database', 'AI', 'Dataanalyse'],
+    roles: ['Database', 'Sikkerhet', 'DevOps/AI'],
     subtitle: 'IT og informasjonssystemer, UiA / 5. semester',
     age: 24,
     hometown: 'Egersund',
@@ -44,7 +44,7 @@ export const teamMembers = [
   {
     id: 4,
     name: 'Eira Bitnes Vikestøl',
-    roles: ['Frontend', 'Testing', 'Informasjonssikkerhet'],
+    roles: ['Frontend', 'Testing', 'UI/UX'],
     subtitle: 'IT og informasjonssystemer, UiA / 5. semester\nUtveksling ved Chung-Ang University i Seoul',
     age: 23,
     hometown: 'Sandvika',
@@ -58,7 +58,7 @@ export const teamMembers = [
   {
     id: 5,
     name: 'Oda Elise Aanestad',
-    roles: ['Nestleder', 'Frontend', 'DevOps'],
+    roles: ['Nestleder', 'Frontend', 'Design'],
     subtitle: 'IT og informasjonssystemer, UiA / 5. semester\nUtveksling ved Chung-Ang University i Seoul',
     age: 21,
     hometown: 'Varhaug',

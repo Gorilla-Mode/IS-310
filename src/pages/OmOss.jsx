@@ -31,7 +31,7 @@ export default function OmOss() {
         */}
         <div className="video-wrap" ref={videoRef}>
           <video controls className="video-embed">
-            <source src="https://github.com/Gorilla-Mode/IS-310/releases/download/Video2/UIA_310_V3COMPRESS.mp4" type="video/mp4" />
+            <source src="https://github.com/Gorilla-Mode/IS-310/releases/download/video-3/UIA_310_V4COMPRESS.mp4" type="video/mp4" />
             <div className="video-placeholder__icon" aria-hidden="true">
               <svg width="52" height="52" viewBox="0 0 52 52" fill="none">
                 <circle cx="26" cy="26" r="25" stroke="rgba(232,255,71,0.35)" strokeWidth="1.5"/>
